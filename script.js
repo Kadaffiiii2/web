@@ -18,3 +18,18 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         responseMessage.style.color = "#FF5733";
     }
 });
+// Tambahkan efek hover pada menu navigasi
+document.querySelectorAll("nav ul li a").forEach(link => {
+    link.addEventListener("mouseover", function() {
+        this.style.color = "#FFD700"; // Warna emas saat hover
+    });
+
+    link.addEventListener("mouseout", function() {
+        this.style.color = "white"; // Kembali ke warna default
+    });
+});
+
+// Tampilkan alert saat halaman dimuat
+window.onload = function() {
+    alert("Selamat datang di halaman About Me - Perpustakaan Kadaffi!");
+};
