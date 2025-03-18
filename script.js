@@ -23,6 +23,16 @@ document.querySelectorAll("nav ul li a").forEach(link => {
     link.addEventListener("mouseover", function() {
         this.style.color = "#FFD700"; // Warna emas saat hover
     });
+    function ubahBiodata() {
+    document.getElementById("nama").innerText = "Kadaffi Piliang";
+    document.getElementById("nim").innerText = "220709024";
+    document.getElementById("jurusan").innerText = "Perpustakaan dan Sains Informasi";
+    document.getElementById("fakultas").innerText = "Ilmu Budaya";
+    document.getElementById("kampus").innerText = "Universitas Sumatera Utara";
+    document.getElementById("email").innerText = "kadaffipiliang09@gmail.com";
+    
+    alert("Biodata telah diperbarui!");
+}
 
     link.addEventListener("mouseout", function() {
         this.style.color = "white"; // Kembali ke warna default
