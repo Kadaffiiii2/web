@@ -1,54 +1,73 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+<html>
+ <style>
+header {
+   background-color: 4B3619;
+   color: white;
+   padding: 20px 10px;
+   text-align: center;
 }
 
-.container {
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 300px;
+header img {
+   height: 50px;
 }
 
-h2 {
-    text-align: center;
+header nav ul li {
+   display: inline;
+   margin: 0 10px;
 }
 
-label {
-    display: block;
-    margin-top: 10px;
+header nav ul li a {
+   color: white;
+   text-decoration: none;
 }
+</style>
+   
+    <head>
+    <head><title>Contact Us</title></head>
+    </head> 
+<body> 
+<p>Ingin tahu lebih banyak atau punya pertanyaan? Silahkan hubungi melalui form berikut:</p>
 
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
-button {
-    margin-top: 15px;
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+<form action="contact.php" method="GET">
+    <!-- letakkan field di sini -->
+<fieldset>
+<legend><h1><b>Contact Us</b></h1></legend>
 
-button:hover {
-    background-color: #218838;
-}
+    <tr>
+    <label> Nama: </label>
+    <input type="text" name="nama-lengkap" /><br/></td>
+    </tr>
+<p>
 
-#responseMessage {
-    text-align: center;
-    color: green;
-    margin-top: 10px;
+    <tr>
+    <label> Email: </label>
+    <input type="email" name="email" /><br />
+    </tr>
+<p>
+
+
+    <tr>
+<form action="prosess-form.php" method="GET">
+    <!-- letakkan field di sini -->
+    <label> Isi Komentar: </label>
+    <textarea name="komentar" rows="4" cols="50" ></textarea>    <br /><br />
+    </tr>
+
+<td><input type="submit" name="submit" value="Submit" value="Send"/></td>
+        <td></td>
+        <td></td>
+ 
+</style>
+
+<footer>
+  <p>&copy; 2025 Perpustakaan Kadaffi</p>
+</footer>
+<style>
+footer {
+   background-color:  4B3619;
+   color: white;
+   padding: 20px 10px;
+   text-align: center;
 }
+</style>
