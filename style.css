@@ -80,6 +80,7 @@ button:hover {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    display: flex;
     transition: background 0.3s, color 0.3s;
 }
 
@@ -92,7 +93,9 @@ body {
     flex-direction: column;
     padding: 20px;
     position: fixed;
-    transition: background 0.3s;
+    top: 0;
+    left: 0;
+    transition: left 0.3s;
 }
 
 .logo {
@@ -159,6 +162,30 @@ body {
     border-radius: 5px;
 }
 
+.content {
+    margin-left: 250px; /* Memberikan ruang agar sidebar tidak menutupi konten */
+    padding: 20px;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: #6A5ACD;
+    color: white;
+}
+
+.menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none; /* Disembunyikan di layar besar */
+}
+
 .dark-mode {
     background: #1a1a1a;
     color: white;
@@ -180,6 +207,22 @@ body {
     background: #444;
     color: white;
 }
-    margin-top: 10px;
-    font-size: 14px;
+
+/* Responsif untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        left: -250px;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
 }
