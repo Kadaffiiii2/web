@@ -18,11 +18,19 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         responseMessage.style.color = "#FF5733";
     }
 });
+document.getElementById('menuToggle').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('show');
+});
+
 document.getElementById('toggleMode').addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
-    
+
     if (document.body.classList.contains('dark-mode')) {
         this.textContent = "☀️ Light Mode";
+    } else {
+        this.textContent = "🌙 Dark Mode";
+    }
+});
     } else {
         this.textContent = "🌙 Dark Mode";
     }
