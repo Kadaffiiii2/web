@@ -1,5 +1,5 @@
 document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Mencegah reload halaman
+    event.preventDefault(); 
 
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
@@ -10,7 +10,6 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         responseMessage.textContent = "Pesan Anda berhasil dikirim!";
         responseMessage.style.color = "green";
 
-        // Reset form setelah sukses
         document.getElementById("contactForm").reset();
     } else {
         responseMessage.textContent = "Harap isi semua bidang!";
