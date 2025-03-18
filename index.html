@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Kadaffi</title>
     <style>
+        /* Import font Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
         /* Styling untuk halaman */
         body {
             font-family: Arial, sans-serif;
@@ -31,18 +34,19 @@
             background-color: #4B3619;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 10px; /* Mengurangi tinggi header */
             border-radius: 8px 8px 0 0;
         }
 
         header img {
-            height: 80px;
+            height: 60px; /* Sedikit dikurangi */
         }
 
         /* Navigasi */
         nav ul {
             padding: 0;
             list-style: none;
+            margin: 10px 0 0 0;
         }
 
         nav ul li {
@@ -56,12 +60,19 @@
             font-weight: bold;
         }
 
+        /* Styling untuk teks "HALLO SEMUA!!!" */
+        .greeting {
+            color: blue; /* Mengubah warna menjadi biru */
+            font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
+            font-weight: 700;
+        }
+
         /* Footer */
         footer {
             background-color: #4B3619;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             margin-top: 20px;
             border-radius: 0 0 8px 8px;
         }
@@ -82,7 +93,7 @@
         </header>
 
         <main>
-            <h2>HALLO SEMUA!!!</h2>
+            <h2 class="greeting">HALLO SEMUA!!!</h2>
             <p>Selamat datang di website resmi perpustakaan kami. Website ini kami sediakan untuk memudahkan Anda dalam mengakses berbagai informasi seputar koleksi buku, layanan perpustakaan, serta kegiatan dan event menarik yang kami selenggarakan.</p>
 
             <p>Di sini, Anda dapat mencari katalog buku, mengetahui jadwal operasional, serta mendapatkan rekomendasi bacaan terbaik.</p>
