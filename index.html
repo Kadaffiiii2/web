@@ -68,70 +68,33 @@ footer {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Buku</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .book {
-            background: white;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 250px;
-            text-align: center;
-        }
-        .book img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .book h3 {
-            margin: 10px 0 5px;
-        }
-        .book p {
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
+    <title>Perpustakaan Buku</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <h1>Katalog Buku</h1>
     <div class="container">
-        <div class="book">
-            <img src="https://via.placeholder.com/150" alt="Cover Buku 1">
-            <h3>Judul Buku 1</h3>
-            <p>Penulis: John Doe</p>
-            <p>Deskripsi singkat buku.</p>
-        </div>
-
-        <div class="book">
-            <img src="https://via.placeholder.com/150" alt="Cover Buku 2">
-            <h3>Judul Buku 2</h3>
-            <p>Penulis: Jane Smith</p>
-            <p>Deskripsi singkat buku.</p>
-        </div>
-
-        <div class="book">
-            <img src="https://via.placeholder.com/150" alt="Cover Buku 3">
-            <h3>Judul Buku 3</h3>
-            <p>Penulis: Alex Johnson</p>
-            <p>Deskripsi singkat buku.</p>
+        <h1>Temukan Buku Favorit Anda</h1>
+        <p>Kami memiliki berbagai koleksi buku yang dapat Anda telusuri.</p>
+        
+        <input type="text" placeholder="Cari buku..." class="search-box">
+        
+        <div class="book-list">
+            <div class="book-card">
+                <img src="5-second-rule.jpg" alt="The 5 Second Rule">
+                <div class="book-info">
+                    <h2>The 5 Second Rule: Transform your Life, Work, and Confidence with Everyday Courage</h2>
+                    <p>“You often feel tired, not because you've done too much, but because you've done too little of what sparks a light in you.” — Anonymous</p>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <img src="learning-web-design.jpg" alt="Learning Web Design">
+                <div class="book-info">
+                    <h2>Learning Web Design: A Beginner’s Guide to HTML, CSS, JavaScript, and Web Graphics</h2>
+                    <p>“You often feel tired, not because you've done too much, but because you've done too little of what sparks a light in you.”</p>
+                </div>
+            </div>
         </div>
     </div>
-
 </body>
 </html>
