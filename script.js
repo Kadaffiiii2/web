@@ -1,5 +1,5 @@
 document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); 
+    event.preventDefault(); // Mencegah reload halaman
 
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
@@ -8,11 +8,12 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
     if (name && email && message) {
         responseMessage.textContent = "Pesan Anda berhasil dikirim!";
-        responseMessage.style.color = "green";
+        responseMessage.style.color = "#4CAF50";
 
+        // Reset form setelah sukses
         document.getElementById("contactForm").reset();
     } else {
         responseMessage.textContent = "Harap isi semua bidang!";
-        responseMessage.style.color = "red";
+        responseMessage.style.color = "#FF5733";
     }
 });
