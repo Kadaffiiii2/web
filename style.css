@@ -45,20 +45,16 @@ label {
     margin-bottom: 5px;
 }
 
-input, textarea {
+input, textarea, select {
     width: 100%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     font-size: 14px;
-}
-
-input {
     background-color: #f8ebe6;
 }
 
 textarea {
-    background-color: #f8ebe6;
     resize: none;
 }
 
@@ -66,7 +62,7 @@ textarea {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #5a3e2b;
+    background-color: #C39D7A;
     color: white;
     border: none;
     border-radius: 5px;
@@ -76,7 +72,7 @@ button {
 }
 
 button:hover {
-    background-color: #3f2a1d;
+    background-color: #C39D7A;
 }
 
 /* Pesan respons */
