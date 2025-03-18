@@ -9,13 +9,13 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
     if (name && email && category && message) {
         responseMessage.textContent = `Pesan Anda (${category}) berhasil dikirim!`;
-        responseMessage.style.color = "#4CAF50";
+        responseMessage.style.color = "#4B3619";
 
         // Reset form setelah sukses
         document.getElementById("contactForm").reset();
     } else {
         responseMessage.textContent = "Harap isi semua bidang!";
-        responseMessage.style.color = "#FF5733";
+        responseMessage.style.color = "#4B3619";
     }
 });
 // Tambahkan efek hover pada menu navigasi
