@@ -1,110 +1,86 @@
+/* Styling Global */
 body {
-    font-family: Arial, sans-serif;/* Styling dasar */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5e1da;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-/* Kotak form */
+/* Container */
 .container {
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 300px;
+    background: #8b5e3c;
+    color: #fff;
+    padding: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
 }
 
+/* Judul */
 h2 {
-    text-align: center;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Subjudul */
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+/* Input Group */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
 }
 
 label {
     display: block;
-    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 input, textarea {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: none;
     border-radius: 5px;
+    font-size: 14px;
+}
+
+input {
+    background-color: #f8ebe6;
+}
+
+textarea {
+    background-color: #f8ebe6;
+    resize: none;
 }
 
 /* Tombol */
 button {
-    margin-top: 15px;
     width: 100%;
-    padding: 10px;
-    background-color: #28a745;
+    padding: 12px;
+    background-color: #5a3e2b;
     color: white;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #3f2a1d;
 }
 
 /* Pesan respons */
 #responseMessage {
-    text-align: center;
     margin-top: 10px;
-}
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 300px;
-}
-
-h2 {
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    margin-top: 15px;
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-#responseMessage {
-    text-align: center;
-    color: green;
-    margin-top: 10px;
+    font-size: 14px;
 }
