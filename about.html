@@ -5,89 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Perpustakaan Kadaffi</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styling umum */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5DC;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #FFF;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .description {
+            text-align: justify;
+            color: #333;
+        }
+
+        /* Styling tabel */
+        #biodata-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #biodata-table th {
+            background-color: #8B5A2B; /* Warna coklat gelap */
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        #biodata-table td {
+            background-color: #D2B48C; /* Warna coklat terang */
+            padding: 10px;
+            color: black;
+            border: 1px solid #8B5A2B;
+        }
+
+        /* Styling header */
+        header {
+            background-color: #4B3619;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Styling footer */
+        footer {
+            background-color: #4B3619;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Tentang Kami</h1>
-        <p class="description">
-            Selamat datang di Perpustakaan Kadaffi, tempat di mana pengetahuan dan inspirasi bertemu.
-            Kami berkomitmen untuk menyediakan akses luas terhadap berbagai koleksi buku, referensi digital, dan layanan perpustakaan yang inovatif.
-        </p>
-        <p class="description">
-            Website ini dikembangkan sebagai bagian dari tugas Mata Kuliah Pengembangan Web-Praktik,
-            yang diampu oleh Himma Dewiyana, S.T., M.Hum.Kami percaya bahwa membaca adalah kunci untuk membuka wawasan
-            dan membangun masa depan yang lebih baik.
-        </p>
-        <p class="description">
-            Mari bergabung bersama kami dalam perjalanan menuju dunia penuh ilmu dan pengetahuan!
-        </p>
 
-        <h2>Biodata Diri</h2>
-        <table id="biodata-table">
-            <tr>
-                <th>Nama</th>
-                <td id="nama">Kadaffi</td>
-            </tr>
-            <tr>
-                <th>NIM</th>
-                <td id="nim">220709024</td>
-            </tr>
-            <tr>
-                <th>Jurusan</th>
-                <td id="jurusan">Perpustakaan dan Sains Informasi</td>
-            </tr>
-            <tr>
-                <th>Fakultas</th>
-                <td id="fakultas">Ilmu Budaya</td>
-            </tr>
-            <tr>
-                <th>Perguruan Tinggi</th>
-                <td id="kampus">Universitas Sumatera Utara</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td id="email">Kadaffipiliang09@gmail.com</td>
-            </tr>
-        </table>
-    <script src="script.js"></script>
-</body>
-</html>
-</style>
+<header>
+    <h1>Perpustakaan Kadaffi</h1>
+</header>
 
-</body>
-</html>
-<ul>
-   <style>
-header {
-   background-color: 4B3619;
-   color: white;
-   padding: 20px 10px;
-   text-align: center;
-}
+<div class="container">
+    <h1>Tentang Kami</h1>
+    <p class="description">
+        Selamat datang di Perpustakaan Kadaffi, tempat di mana pengetahuan dan inspirasi bertemu.
+        Kami berkomitmen untuk menyediakan akses luas terhadap berbagai koleksi buku, referensi digital, dan layanan perpustakaan yang inovatif.
+    </p>
+    <p class="description">
+        Website ini dikembangkan sebagai bagian dari tugas Mata Kuliah Pengembangan Web-Praktik,
+        yang diampu oleh Himma Dewiyana, S.T., M.Hum. Kami percaya bahwa membaca adalah kunci untuk membuka wawasan
+        dan membangun masa depan yang lebih baik.
+    </p>
+    <p class="description">
+        Mari bergabung bersama kami dalam perjalanan menuju dunia penuh ilmu dan pengetahuan!
+    </p>
 
-header img {
-   height: 50px;
-}
+    <h2>Biodata Diri</h2>
+    <table id="biodata-table">
+        <tr>
+            <th>Nama</th>
+            <td id="nama">Kadaffi</td>
+        </tr>
+        <tr>
+            <th>NIM</th>
+            <td id="nim">220709024</td>
+        </tr>
+        <tr>
+            <th>Jurusan</th>
+            <td id="jurusan">Perpustakaan dan Sains Informasi</td>
+        </tr>
+        <tr>
+            <th>Fakultas</th>
+            <td id="fakultas">Ilmu Budaya</td>
+        </tr>
+        <tr>
+            <th>Perguruan Tinggi</th>
+            <td id="kampus">Universitas Sumatera Utara</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td id="email">Kadaffipiliang09@gmail.com</td>
+        </tr>
+    </table>
+</div>
 
-header nav ul li {
-   display: inline;
-   margin: 0 10px;
-}
-
-header nav ul li a {
-   color: white;
-   text-decoration: none;
-}
-</style>
-   
 <footer>
-  <p>&copy; 2025 Perpustakaan Kadaffi</p>
+    <p>&copy; 2025 Perpustakaan Kadaffi</p>
 </footer>
-<style>
-footer {
-   background-color: 4B3619;
-   color: white;
-   padding: 20px 10px;
-   text-align: center;
-}
-</style>
+
+<script src="script.js"></script>
+</body>
+</html>
