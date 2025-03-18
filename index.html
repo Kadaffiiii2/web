@@ -63,3 +63,75 @@ footer {
    text-align: center;
 }
 </style>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Buku</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .book {
+            background: white;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .book h3 {
+            margin: 10px 0 5px;
+        }
+        .book p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Katalog Buku</h1>
+    <div class="container">
+        <div class="book">
+            <img src="https://via.placeholder.com/150" alt="Cover Buku 1">
+            <h3>Judul Buku 1</h3>
+            <p>Penulis: John Doe</p>
+            <p>Deskripsi singkat buku.</p>
+        </div>
+
+        <div class="book">
+            <img src="https://via.placeholder.com/150" alt="Cover Buku 2">
+            <h3>Judul Buku 2</h3>
+            <p>Penulis: Jane Smith</p>
+            <p>Deskripsi singkat buku.</p>
+        </div>
+
+        <div class="book">
+            <img src="https://via.placeholder.com/150" alt="Cover Buku 3">
+            <h3>Judul Buku 3</h3>
+            <p>Penulis: Alex Johnson</p>
+            <p>Deskripsi singkat buku.</p>
+        </div>
+    </div>
+
+</body>
+</html>
