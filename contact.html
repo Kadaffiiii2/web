@@ -1,4 +1,54 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p class="subtitle">Kami siap menerima kritik dan saran Anda.</p>
+
+        <form id="contactForm">
+            <div class="input-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+            </div>
+
+            <div class="input-group">
+                <label for="category">Jenis Pengaduan</label>
+                <select id="category" name="category" required>
+                    <option value="">Pilih jenis pengaduan</option>
+                    <option value="Kritik">Kritik</option>
+                    <option value="Saran">Saran</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="message">Pesan</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
+            </div>
+
+            <button type="submit">Kirim Pesan</button>
+        </form>
+
+        <p id="responseMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
 <html lang="id">
 <head>
     <meta charset="UTF-8">
