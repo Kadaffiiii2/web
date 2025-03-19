@@ -18,11 +18,11 @@
             justify-content: center;
         }
 
-        /* Container utama agar konten tidak full page */
+        /* Container utama */
         .container {
             width: 80%;
             max-width: 1000px;
-            background-color: #E2CEB1; /* Warna cream agar menyatu */
+            background-color: #E2CEB1;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             margin: 20px 0;
@@ -60,17 +60,63 @@
             font-weight: bold;
         }
 
-        /* Styling untuk teks "HALLO SEMUA!!!" dan "Selamat Berkunjung!!" */
+        /* Greeting */
         .greeting, .welcome-text {
-            color: #4B3619; /* Warna coklat tua */
+            color: #4B3619;
             font-weight: 700;
-            text-align: left; /* Rata kiri */
+            text-align: left;
+        }
+
+        /* Daftar rekomendasi buku */
+        .book-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        ul.book-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.book-list li {
+            background: #ddd;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #4B3619;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            background: #362511;
         }
 
         /* Footer */
         footer {
             background-color: #4B3619;
-            height: 30px; /* Mengurangi tinggi footer */
+            height: 30px;
             border-radius: 0 0 8px 8px;
         }
     </style>
@@ -97,9 +143,67 @@
             <a href="https://lib.ui.ac.id" target="_blank">Perpustakaan Universitas Indonesia (UI)</a> yang dapat meningkatkan wawasan dan pengetahuan.</p>
 
             <p class="welcome-text">Selamat Berkunjung!!</p>
+
+            <!-- Rekomendasi Buku -->
+            <section class="book-section">
+                <h2>Rekomendasi Buku</h2>
+                <ul class="book-list" id="book-list"></ul>
+                <button class="download-btn" onclick="generatePDF()">Download Rekomendasi Buku (PDF)</button>
+            </section>
         </main>
 
         <footer></footer>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const books = [
+                { title: "Atomic Habits", author: "James Clear", file: "books/atomic-habits.pdf" },
+                { title: "The Subtle Art of Not Giving a F*ck", author: "Mark Manson", file: "books/subtle-art.pdf" },
+                { title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", file: "books/rich-dad.pdf" },
+                { title: "Think and Grow Rich", author: "Napoleon Hill", file: "books/think-grow-rich.pdf" },
+                { title: "The Psychology of Money", author: "Morgan Housel", file: "books/psychology-of-money.pdf" }
+            ];
+
+            const bookList = document.getElementById("book-list");
+
+            books.forEach(book => {
+                const li = document.createElement("li");
+                li.innerHTML = `<strong>${book.title}</strong> - ${book.author} 
+                                <a href="${book.file}" target="_blank">Download</a>`;
+                bookList.appendChild(li);
+            });
+        });
+
+        // Fungsi untuk membuat PDF daftar buku
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            doc.setFont("helvetica", "bold");
+            doc.text("Rekomendasi Buku Perpustakaan Kadaffi", 20, 20);
+            
+            let y = 40;
+            const books = [
+                "1. Atomic Habits - James Clear",
+                "2. The Subtle Art of Not Giving a F*ck - Mark Manson",
+                "3. Rich Dad Poor Dad - Robert Kiyosaki",
+                "4. Think and Grow Rich - Napoleon Hill",
+                "5. The Psychology of Money - Morgan Housel"
+            ];
+
+            doc.setFont("helvetica", "normal");
+            books.forEach(book => {
+                doc.text(book, 20, y);
+                y += 10;
+            });
+
+            doc.save("Rekomendasi_Buku.pdf");
+        }
+    </script>
+
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </body>
 </html>
