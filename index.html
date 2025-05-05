@@ -1,254 +1,376 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpuuuustakaan Kadaffi</title>
+    <title>Perpustakaan Jesika Yusnita Laoly</title>
     <style>
-        /* Import font Poppins */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-
-        /* Styling untuk halaman */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #E2CEB1;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Container utama */
-        .container {
-            width: 80%;
-            max-width: 1000px;
-            background-color: #E2CEB1;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-
-        /* Header */
+        /* HEADER */
         header {
-            background-color: #4B3619;
+            background-color: #00BFFF;
             color: white;
+            padding: 20px 10px;
             text-align: center;
-            padding: 10px;
-            border-radius: 8px 8px 0 0;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         header img {
-            height: 60px;
+            height: 50px;
         }
 
-        /* Navigasi */
-        nav ul {
+        header nav ul {
             padding: 0;
             list-style: none;
-            margin: 10px 0 0 0;
         }
 
-        nav ul li {
+        header nav ul li {
             display: inline;
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
-        nav ul li a {
+        header nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease-in-out;
         }
 
-        /* Book Recommendations */
-        .book-section {
-            margin-top: 20px;
+        header nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* ANIMASI FADE-IN */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SECTION "TENTANG SAYA" */
+        .about {
+            max-width: 800px;
+            margin: 40px auto;
             padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
-        }
-
-        .book-section h2 {
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            color: #4B3619;
         }
 
-        .book-container {
+        .about h2 {
+            color: #00BFFF;
+        }
+
+        .about p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* REKOMENDASI BUKU */
+        .rekomendasi {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .buku-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
+            gap: 20px;
+            padding: 20px;
         }
 
-        .book-card {
-            background: #fdfdfd;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
+        .buku {
             width: 220px;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        .book-card img {
+        .buku:hover {
+            transform: scale(1.05);
+        }
+
+        .buku img {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
+            height: auto;
+            border-radius: 5px;
         }
 
-        .book-title {
-            font-weight: bold;
-            margin: 10px 0 5px;
-        }
-
-        .book-author {
+        .buku p {
             font-size: 14px;
-            color: #555;
+            font-weight: bold;
+            margin: 10px 0;
         }
 
-        .book-description {
-            font-size: 12px;
-            margin: 5px 0 10px;
-            color: #777;
-        }
-
-        .download-btn {
+        .buku a {
             display: block;
+            margin-top: 5px;
             padding: 8px;
-            background: #4B3619;
+            background: #00BFFF;
             color: white;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
-            margin-top: 5px;
+            transition: background 0.3s;
         }
 
-        .download-btn:hover {
-            background: #362511;
+        .buku a:hover {
+            background: #005f9e;
         }
 
-        /* Footer */
+        /* FOOTER */
         footer {
-            background-color: #4B3619;
-            height: 30px;
-            border-radius: 0 0 8px 8px;
+            background-color: #00BFFF;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
-            <h1>Perpustakaan Kadaffi</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Homepage</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </header>
 
-        <main>
-            <h2>Hallo! Selamat Datang di Perpustakaan Kadaffi</h2>
-            <p>Website ini menyediakan katalog buku terbaik untuk meningkatkan wawasan dan pengetahuan Anda.</p>
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+    <h1>Perpustakaan Jesika Yusnita Laoly</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="http://localhost/tabel.php">PHP</a></li>
+        </ul>
+    </nav>
+</header>
 
-            <!-- Book Recommendations -->
-            <section class="book-section">
-                <h2>Book Recommendations</h2>
-                <div class="book-container" id="book-list"></div>
-            </section>
-        </main>
+<!-- TENTANG SAYA -->
+<div class="about fade-in">
+    <h2>Tentang Saya</h2>
+    <p>Selamat datang di perpustakaan digital saya! Website ini adalah tempat saya mengarsipkan berbagai koleksi tulisan, artikel, dan referensi yang bermanfaat bagi siapa saja yang mencintai ilmu dan wawasan baru.</p>
+</div>
 
-        <footer></footer>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const books = [
-                {
-                    title: "The Subtle Art of Not Giving a F*ck",
-                    author: "Mark Manson",
-                    description: "Pendekatan hidup dengan menerima keterbatasan dan ketidaksempurnaan.",
-                    cover: "https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg",
-                    file: "https://drive.google.com/file/d/1MmDJxq5Ai79g2K8Hg-YwuVOvKP4qb8mT/view?usp=drivesdk"
-                },
-                {
-                    title: "Rich Dad Poor Dad",
-                    author: "Robert Kiyosaki",
-                    description: "Pelajaran keuangan dari dua figur ayah yang berbeda.",
-                    cover: "https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg",
-                    file: "https://drive.google.com/file/d/1MkWfM-S075XMs_tHclD340QiJN_210NL/view?usp=sharing"
-                },
-                {
-                    title: "Think and Grow Rich",
-                    author: "Napoleon Hill",
-                    description: "Formula sukses berdasarkan pola pikir dan kebiasaan.",
-                    cover: "https://m.media-amazon.com/images/I/71UypkUjStL.jpg",
-                    file: "https://drive.google.com/file/d/1MkdhNi-LzfK5pBekQ4PxRQFwYD8k7Bc1/view?usp=sharing"
-                },
-                   
-                {   title: "Atomic Habits", 
-                     author: "James Clear", 
-                   description: "Membangun kebiasaan baik dari hal-hal kecil.", 
-                   cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
-                   file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
-                },
-
-                 { title: "Sapiens", 
-                  author: "Yuval Noah Harari", 
-                  description: "Sejarah singkat manusia dari awal peradaban.", 
-                  cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
-                  file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
-                 },
-            ];
-
-            const bookList = document.getElementById("book-list");
-
-            books.forEach(book => {
-                const bookCard = document.createElement("div");
-                bookCard.classList.add("book-card");
-
-                bookCard.innerHTML = `
-                    <img src="${book.cover}" alt="${book.title}">
-                    <h3 class="book-title">${book.title}</h3>
-                    <p class="book-author">by ${book.author}</p>
-                    <p class="book-description">${book.description}</p>
-                    <a href="${book.file}" target="_blank" class="download-btn">Baca Disini</a>
-                `;
-
-                bookList.appendChild(bookCard);
-            <!-- EVENT PERPUSTAKAAN -->
+<!-- REKOMENDASI BUKU -->
+<div class="rekomendasi fade-in">
+    <h3>Rekomendasi Buku</h3>
+    
+    <div class="buku-container">
+        <div class="buku">
+            <img src="https://i.imgur.com/x3IigYG.jpg" alt="Buku 1">
+            <p>Know Can Do!: Put Your Know-How Into Action</p>
+            <a href="https://drive.google.com/file/d/1D16EtsVGXx-BYGFWCgQeESk1_AsX09zb/view?usp=drivesdk" target="_blank">Download File</a>
+        </div>
+        <div class="buku">
+            <img src="https://i.imgur.com/wRDhdzT.jpg" alt="Buku 2">
+            <p>That Will Never Work</p>
+            <a href="https://drive.google.com/file/d/1DacSCJrGrmvP7aV2sDp6Pa9OcCg1FCgI/view?usp=drivesdk" target="_blank">Download File</a>
+        </div>
+        <div class="buku">
+            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386051/Screenshot_20250319_175543_Drive_tzjdda.jpg" alt="Buku 3">
+            <p>Win Keep Grow</p>
+            <a href="https://drive.google.com/file/d/1Cpro2nn5B5EAXl4nLXLR0EmNseQapDa-/view?usp=drivesdk" target="_blank">Download File</a>
+        </div>
+        <div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742385759/f06728e1142316050b905c4ff9f6d1b3_zxmm6d.jpg" alt="Buku 4">
+    <p>The 7 Habits of Highly Effective People</p>
+    <a href="https://drive.google.com/file/d/1DLbGvHQ8Ct_qASE8yXmnI2rexZwxHOo7/view?usp=drivesdk" target="_blank">Download File</a>
+</div>
+<div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742385826/83bec07a6da897d33a5e874aee41aa74_lkp4tq.jpg" alt="Buku 5">
+    <p>Sales Management Simplified</p>
+    <a href="https://drive.google.com/file/d/1DLbGvHQ8Ct_qASE8yXmnI2rexZwxHOo7/view?usp=drivesdk" target="_blank">Download File</a>
+</div>
+<div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386298/Screenshot_20250319_142334_Gallery_1_gcrn9l.jpg" alt="Buku 6">
+    <p>The Art of Strategy: A Game Theorist's Guide to Success in Business & Life</p>
+    <a href="https://drive.google.com/file/d/1DIn4v2DVqDTlI4bV-3NfUH-P7FMWqvt5/view?usp=drivesdk" target="_blank">Download File</a>
+</div>
+<div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386478/Screenshot_20250319_142352_Gallery_1_suwlfb.jpg" alt="Buku 7">
+    <p>Master Mentors: 30 Transformative Insights from Our Greatest Minds</p>
+    <a href="https://drive.google.com/file/d/1CudR0cpOFyEZT6oVyc0f7oYCv435kzzq/view?usp=drivesdk" target="_blank">Download File</a>
+</div>
+<div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386915/Screenshot_20250319_192026_Drive_cq8kl2.jpg" alt="Buku 8">
+    <p>Get it Done: Surprising Lessons from the Science of Motivation</p>
+    <a href="https://drive.google.com/file/d/1FHRw0bYtWv5m9MWm30HND1G7DAwZYsMY/view?usp=drivesdk" target="_blank">Download File</a>
+</div>
+</div>
+  <!-- EVENT TERKINI -->
 <div class="rekomendasi fade-in">
     <h3>Event Terkini</h3>
     <div class="buku-container">
         <div class="buku">
-            <img src="https://i.imgur.com/7pDtl9S.jpeg" alt="Event 1">
-            <p>Event: Lomba Karya Tulis Ilmiah & Poster</p>
-            <a href="https://www.instagram.com/p/DH5v_rsTEV6/?igsh=ajJtdzdwYWQydzUx" target="_blank">Lihat</a>
+            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1745995066/Screenshot_20250430_133117_Instagram_oco6i3.jpg" alt="Event 1">
+            <p>Event: Webinar Literasi Pemanfaatan Akses E-Resources Perpustakaan UT "e-Journal Taylor & Francis"</p>
+            <a href="https://www.instagram.com/p/DIssMeTTraB/?igsh=MW14ZWxjNWlrNW44Mw==" target="_blank">Lihat di Instagram</a>
         </div>
         <div class="buku">
-            <img src="https://i.imgur.com/9XhcD1B.jpeg" alt="Event 2">
-            <p>Event: Lomba Eco Accounting: Business Model Canvas</p>
-            <a href="https://www.instagram.com/p/DHSfJVspH0K/?igsh=bWE0Z2hibm9jbmpz" target="_blank">Lihat</a>
+            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1745995218/Screenshot_20250430_133135_Instagram_nzebq9.jpg" alt="Event 2">
+            <p>Event: Webinar Peran Duta literasi Dalam Pengembangan Perpustakaan Sekolah</p>
+            <a href="https://www.instagram.com/p/C6p49L_v_4S/?igsh=MjZicXhzOHV3Mnph" target="_blank">Lihat di Instagram</a>
         </div>
         <div class="buku">
-            <img src="https://i.imgur.com/AeSg9va.jpeg" alt="Event 3">
-            <p>Event: Lomba Esay Nasional</p>
-            <a href="https://www.instagram.com/p/DHj8wJDzdr4/?igsh=bThlamxuajZ2dHo5" target="_blank">Lihat</a>
+            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1745995155/Screenshot_20250430_133144_Instagram_xggjn8.jpg" alt="Event 3">
+            <p>Event: Webinar Nasional "Academic Writing Skills : Meningkatkan Kemampuan Penulisan Karya Ilmiah Dan Tugas Akhir Bagi Mahasiswa Dan Dosen"</p>
+            <a href="https://www.instagram.com/p/DGAhU6RStTM/?igsh=MmJlenF3OWI5cWhp" target="_blank">Lihat di Instagram</a>
         </div>
         <div class="buku">
-            <img src="https://i.imgur.com/uGljZYU.jpeg" alt="Event 4">
-            <p>Event: Lomba Video Kreatif Akuntansi</p>
-            <a href="https://www.instagram.com/p/DIL8op8TGpx/?igsh=Yjh4aHBhaDI4aGwx" target="_blank">Lihat</a>
+            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1745995257/Screenshot_20250430_133309_Instagram_ozr1wg.jpg" alt="Event 4">
+            <p>Event: Pelatihan dan Workshop Pemanfaatan E-Journal Emerald dan E-Journal IEEXplore Perpustakaan Universitas Mercu Buana</p>
+            <a href="https://www.instagram.com/p/DHm92RqSPgu/?igsh=MTJnMHl3c2g4ZTBkdw==" target="_blank">Lihat di Instagram</a>
         </div>
     </div>
 </div>
 
-            });
+<!-- CSS untuk tampilan tabel -->
+<style>
+    .tabel-perkalian {
+        border-collapse: collapse;
+        margin: auto;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabel-perkalian th,
+    .tabel-perkalian td {
+        border: 1px solid #ccc;
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    .tabel-perkalian th {
+        background-color: #007acc;
+        color: white;
+    }
+
+    .tabel-perkalian tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .tabel-perkalian tbody tr:hover {
+        background-color: #e0f7fa;
+        transition: background-color 0.3s ease;
+    }
+</style>
+    <!-- VIDEO YOUTUBE DENGAN ANIMASI -->
+<div class="video-container fade-in-zoom" style="margin-top: 60px; text-align: center;">
+    <h2 style="font-size: 28px; margin-bottom: 20px;">Tonton Video Pembelajaran</h2>
+    <iframe width="640" height="360" 
+        src="https://www.youtube.com/embed/a2i7oRG9rvE" 
+        title="Video Pembelajaran" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+    </iframe>
+</div>
+
+<!-- CSS untuk animasi -->
+<style>
+    .fade-in-zoom {
+        opacity: 0;
+        transform: scale(0.9);
+        animation: fadeZoomIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeZoomIn {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>
+<!-- REKOMENDASI MUSIK SPOTIFY -->
+<div class="music-section">
+  <h2>🎧 Rekomendasi Musik Belajar</h2>
+
+  <div class="music-list">
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/63VnhcHMnTPCcd24oVajL6?utm_source=generator" 
+      width="100%" height="152" frameborder="0" allowfullscreen 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/5Egm9N7FnzsThl1CFXB2mm?utm_source=generator" 
+      width="100%" height="152" frameborder="0" allowfullscreen 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/4snIhdHJ9q2ZNR7egVpG5v?utm_source=generator" 
+      width="100%" height="152" frameborder="0" allowfullscreen 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/21VAHk2V9XKkhsTT0LCyPI?utm_source=generator" 
+      width="100%" height="152" frameborder="0" allowfullscreen 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+<!-- CSS untuk tampilan -->
+<style>
+  .music-section {
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #f0f8ff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .music-section h2 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 20px;
+  }
+
+  .music-list iframe {
+    margin-bottom: 20px;
+  }
+</style>
+
+<footer>
+    <p>&copy; 2025 All rights reserved</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let elements = document.querySelectorAll(".fade-in");
+        elements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add("visible");
+            }, index * 300);
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
