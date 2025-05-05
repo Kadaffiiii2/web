@@ -73,65 +73,40 @@
 </head>
 <body>
   <h1>🎧 Musik Teman Belajar</h1>
- <!-- REKOMENDASI MUSIK SPOTIFY -->
-<div class="music-section">
-  <h2>🎧 Rekomendasi Musik Belajar</h2>
+  <div class="music-list" id="music-list"></div>
 
-  <div class="music-list">
-    <iframe style="border-radius:12px" 
-      src="https://open.spotify.com/embed/track/63VnhcHMnTPCcd24oVajL6?utm_source=generator" 
-      width="100%" height="152" frameborder="0" allowfullscreen 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-    </iframe>
-
-    <iframe style="border-radius:12px" 
-      src="https://open.spotify.com/embed/track/5Egm9N7FnzsThl1CFXB2mm?utm_source=generator" 
-      width="100%" height="152" frameborder="0" allowfullscreen 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-    </iframe>
-
-    <iframe style="border-radius:12px" 
-      src="https://open.spotify.com/embed/track/4snIhdHJ9q2ZNR7egVpG5v?utm_source=generator" 
-      width="100%" height="152" frameborder="0" allowfullscreen 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-    </iframe>
-
-    <iframe style="border-radius:12px" 
-      src="https://open.spotify.com/embed/track/21VAHk2V9XKkhsTT0LCyPI?utm_source=generator" 
-      width="100%" height="152" frameborder="0" allowfullscreen 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-    </iframe>
-  </div>
-</div>
-
-<!-- CSS untuk tampilan -->
-<style>
-  .music-section {
-    margin: 60px auto;
-    padding: 30px;
-    background-color: #f0f8ff;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-
-  .music-section h2 {
-    font-size: 24px;
-    color: #222;
-    margin-bottom: 20px;
-  }
-
-  .music-list iframe {
-    margin-bottom: 20px;
-  }
-</style>
-
-<footer>
-    <p>&copy; 2025 All rights reserved</p>
-</footer>
-
+  <script>
+    const songs = [
+      {
+        title: "paragraphs",
+        artist: "Luke Chiang",
+        embed: "https://open.spotify.com/embed/track/0B7XgkdvnjqMdM6I1Xn2lU",
+        cover: "https://i.scdn.co/image/ab67616d0000b27331a04715dc3ef25caa2672ca"
+      },
+      {
+        title: "shouldn't be",
+        artist: "Luke Chiang",
+        embed: "https://open.spotify.com/embed/track/3vV3bCwz9RyXR4E6C0FUT6",
+        cover: "https://i.scdn.co/image/ab67616d0000b2736aeea2c8ff85b15fa8fddae3"
+      },
+      {
+        title: "anchor",
+        artist: "Novo Amor",
+        embed: "https://open.spotify.com/embed/track/2t0nsTYCxzkxjODKWzz2cP",
+        cover: "https://i.scdn.co/image/ab67616d0000b27324e5b44e1b20f09ab2e14ec5"
+      },
+      {
+        title: "bundle of joy",
+        artist: "Michael Giacchino",
+        embed: "https://open.spotify.com/embed/track/6xkryXuiZU3604bYusDkdP",
+        cover: "https://i.scdn.co/image/ab67616d0000b27325fbe5033f7b8fe810ad9752"
+      },
+      {
+        title: "lights are on",
+        artist: "Tom Rosenthal",
+        embed: "https://open.spotify.com/embed/track/1WhsELxAoYkWLBeWytawzj",
+        cover: "https://i.scdn.co/image/ab67616d0000b2739e6bc7879c0e03d77d2c176d"
+      }
     ];
 
     const container = document.getElementById("music-list");
