@@ -3,133 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Belajarrrr dengan Musik</title>
+  <title>Musik Teman Belajar</title>
   <style>
     body {
       margin: 0;
       padding: 2rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       background: #121212;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      color: white;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
-      color: #1db954;
+      color: #1DB954;
       margin-bottom: 2rem;
     }
 
     .music-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      width: 100%;
-      max-width: 1200px;
-    }
-
-    .music-card {
-      background-color: #181818;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s ease;
-    }
-
-    .music-card:hover {
-      transform: scale(1.02);
-    }
-
-    .cover {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-
-    .music-info {
-      padding: 1rem;
-    }
-
-    .title {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    .artist {
-      color: #b3b3b3;
-      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     iframe {
-      border: none;
-      width: 100%;
-      height: 80px;
       border-radius: 12px;
-      margin-top: 1rem;
+      width: 100%;
+      height: 152px;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <h1>🎧 Musik Teman Belajar</h1>
-  <div class="music-list" id="music-list"></div>
+  <h1>🎵 Musik Teman Belajar</h1>
+  <div class="music-list">
+    <!-- 1. paragraphs - luke chiang -->
+    <iframe src="https://open.spotify.com/embed/track/0B7XgkdvnjqMdM6I1Xn2lU?utm_source=generator" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
 
-  <script>
-    const songs = [
-      {
-        title: "paragraphs",
-        artist: "Luke Chiang",
-        embed: "<iframe src="https://open.spotify.com/embed/track/0B7XgkdvnjqMdM6I1Xn2lU?utm_source=generator" 
-   width="100%" height="152" frameborder="0" allowfullscreen 
-   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-</iframe>
+    <!-- 2. shouldn't be - luke chiang -->
+    <iframe src="https://open.spotify.com/embed/track/3vV3bCwz9RyXR4E6C0FUT6?utm_source=generator" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
 
-      },
-      {
-        title: "shouldn't be",
-        artist: "Luke Chiang",
-        embed: <iframe src="https://open.spotify.com/embed/track/3vV3bCwz9RyXR4E6C0FUT6?utm_source=generator" 
-   width="100%" height="152" frameborder="0" allowfullscreen 
-   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-</iframe>
+    <!-- 3. anchor - novo amor -->
+    <iframe src="https://open.spotify.com/embed/track/2t0nsTYCxzkxjODKWzz2cP?utm_source=generator" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
 
-      },
-      {
-        title: "anchor",
-        artist: "Novo Amor",
-        embed: "https://open.spotify.com/embed/track/2t0nsTYCxzkxjODKWzz2cP",
-        cover: "https://i.scdn.co/image/ab67616d0000b27324e5b44e1b20f09ab2e14ec5"
-      },
-      {
-        title: "bundle of joy",
-        artist: "Michael Giacchino",
-        embed: "https://open.spotify.com/embed/track/6xkryXuiZU3604bYusDkdP",
-        cover: "https://i.scdn.co/image/ab67616d0000b27325fbe5033f7b8fe810ad9752"
-      },
-      {
-        title: "lights are on",
-        artist: "Tom Rosenthal",
-        embed: "https://open.spotify.com/embed/track/1WhsELxAoYkWLBeWytawzj",
-        cover: "https://i.scdn.co/image/ab67616d0000b2739e6bc7879c0e03d77d2c176d"
-      }
-    ];
+    <!-- 4. bundle of joy - michael giacchino -->
+    <iframe src="https://open.spotify.com/embed/track/6xkryXuiZU3604bYusDkdP?utm_source=generator" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
 
-    const container = document.getElementById("music-list");
-
-    songs.forEach(song => {
-      const card = document.createElement("div");
-      card.className = "music-card";
-      card.innerHTML = `
-        <img src="${song.cover}" alt="${song.title}" class="cover"/>
-        <div class="music-info">
-          <div class="title">${song.title}</div>
-          <div class="artist">${song.artist}</div>
-          <iframe src="${song.embed}" allow="autoplay; encrypted-media" loading="lazy"></iframe>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  </script>
+    <!-- 5. lights are on - tom rosenthal -->
+    <iframe src="https://open.spotify.com/embed/track/1WhsELxAoYkWLBeWytawzj?utm_source=generator" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+  </div>
 </body>
 </html>
+
