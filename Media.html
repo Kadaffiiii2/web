@@ -1,22 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Music for Studying</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music for Study</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .playlist {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .song {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    iframe {
+      width: 100%;
+      border-radius: 12px;
+      border: none;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        height: 152px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🎧 Teman Belajar: Musik Tenang</h1>
-    <p>Klik lagu untuk memutarnya langsung di Spotify</p>
 
-    <ul class="song-list">
-      <li><a href="https://open.spotify.com/track/7gvdG5TfFwHnIMFzrs1rJW" target="_blank">1. Paragraphs – Luke Chiang</a></li>
-      <li><a href="https://open.spotify.com/track/5WxqgV3Ur7uP4gRZTay9nD" target="_blank">2. Shouldn’t Be – Luke Chiang</a></li>
-      <li><a href="https://open.spotify.com/track/1dB3oXpELxZ1XjVwHtAaGJ" target="_blank">3. Anchor – Novo Amor</a></li>
-      <li><a href="https://open.spotify.com/track/2kavKzVLt2nU41tXwYvTOM" target="_blank">4. Bundle of Joy – Michael Giacchino</a></li>
-      <li><a href="https://open.spotify.com/track/4YOcP1n9Z1JXQMReGqJgKD" target="_blank">5. Lights Are On – Tom Rosenthal</a></li>
-    </ul>
-  </div>
+  <h1>🎧 Music for Study</h1>
+  <div class="playlist" id="playlist"></div>
+
+  <script>
+    const songs = [
+      {
+        title: "Paragraphs - Luke Chiang",
+        spotifyUrl: "https://open.spotify.com/embed/track/5wEFtpa2U2JeGbNgnN43PO"
+      },
+      {
+        title: "Shouldn't Be - Luke Chiang",
+        spotifyUrl: "https://open.spotify.com/embed/track/4Ql8R5rS2bIMdtS6l4cZxy"
+      },
+      {
+        title: "Anchor - Novo Amor",
+        spotifyUrl: "https://open.spotify.com/embed/track/7fY2vmK1tAq76z4vXM5wtc"
+      },
+      {
+        title: "Bundle of Joy - Michael Giacchino",
+        spotifyUrl: "https://open.spotify.com/embed/track/2ZhNQeHqcbI0qlfMLe5vGJ"
+      },
+      {
+        title: "Lights Are On - Tom Rosenthal",
+        spotifyUrl: "https://open.spotify.com/embed/track/1CSdN4n2gIvKwhOvRuGcVU"
+      }
+    ];
+
+    const playlistDiv = document.getElementById('playlist');
+
+    songs.forEach(song => {
+      const songDiv = document.createElement('div');
+      songDiv.className = 'song';
+
+      const title = document.createElement('div');
+      title.className = 'title';
+      title.textContent = song.title;
+
+      const iframe = document.createElement('iframe');
+      iframe.src = song.spotifyUrl;
+      iframe.width = "100%";
+      iframe.height = "80";
+      iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+
+      songDiv.appendChild(title);
+      songDiv.appendChild(iframe);
+      playlistDiv.appendChild(songDiv);
+    });
+  </script>
+
 </body>
 </html>
