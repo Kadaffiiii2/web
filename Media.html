@@ -34,7 +34,7 @@
       background-color: #181818;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease;
     }
 
@@ -62,33 +62,17 @@
       margin-bottom: 1rem;
     }
 
-    .buttons {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .btn {
-      background-color: #1db954;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      text-decoration: none;
-    }
-
     iframe {
       border: none;
       width: 100%;
       height: 80px;
+      border-radius: 12px;
       margin-top: 1rem;
     }
   </style>
 </head>
 <body>
-  <h1>Musik Teman Belajar 🎧</h1>
+  <h1>🎧 Musik Teman Belajar</h1>
   <div class="music-list" id="music-list"></div>
 
   <script>
@@ -97,35 +81,30 @@
         title: "paragraphs",
         artist: "Luke Chiang",
         embed: "https://open.spotify.com/embed/track/0B7XgkdvnjqMdM6I1Xn2lU",
-        link: "https://open.spotify.com/track/0B7XgkdvnjqMdM6I1Xn2lU",
         cover: "https://i.scdn.co/image/ab67616d0000b27331a04715dc3ef25caa2672ca"
       },
       {
         title: "shouldn't be",
         artist: "Luke Chiang",
         embed: "https://open.spotify.com/embed/track/3vV3bCwz9RyXR4E6C0FUT6",
-        link: "https://open.spotify.com/track/3vV3bCwz9RyXR4E6C0FUT6",
         cover: "https://i.scdn.co/image/ab67616d0000b2736aeea2c8ff85b15fa8fddae3"
       },
       {
         title: "anchor",
         artist: "Novo Amor",
         embed: "https://open.spotify.com/embed/track/2t0nsTYCxzkxjODKWzz2cP",
-        link: "https://open.spotify.com/track/2t0nsTYCxzkxjODKWzz2cP",
         cover: "https://i.scdn.co/image/ab67616d0000b27324e5b44e1b20f09ab2e14ec5"
       },
       {
         title: "bundle of joy",
         artist: "Michael Giacchino",
         embed: "https://open.spotify.com/embed/track/6xkryXuiZU3604bYusDkdP",
-        link: "https://open.spotify.com/track/6xkryXuiZU3604bYusDkdP",
         cover: "https://i.scdn.co/image/ab67616d0000b27325fbe5033f7b8fe810ad9752"
       },
       {
         title: "lights are on",
         artist: "Tom Rosenthal",
         embed: "https://open.spotify.com/embed/track/1WhsELxAoYkWLBeWytawzj",
-        link: "https://open.spotify.com/track/1WhsELxAoYkWLBeWytawzj",
         cover: "https://i.scdn.co/image/ab67616d0000b2739e6bc7879c0e03d77d2c176d"
       }
     ];
@@ -140,11 +119,7 @@
         <div class="music-info">
           <div class="title">${song.title}</div>
           <div class="artist">${song.artist}</div>
-          <div class="buttons">
-            <a class="btn" href="${song.link}" target="_blank">🎵 Buka Spotify</a>
-            <a class="btn" href="${song.link}" target="_blank">💾 Simpan</a>
-          </div>
-          <iframe src="${song.embed}" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe src="${song.embed}" allow="autoplay; encrypted-media" loading="lazy"></iframe>
         </div>
       `;
       container.appendChild(card);
