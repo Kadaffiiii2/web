@@ -18,7 +18,6 @@ body {
     border-radius: 10px;
     width: 350px;
     text-align: center;
-    max-width: 600px;
 }
 
 /* Judul */
@@ -46,9 +45,7 @@ label {
     margin-bottom: 5px;
 }
 
-input,
-textarea,
-select {
+input, textarea, select {
     width: 100%;
     padding: 10px;
     border: none;
@@ -75,38 +72,46 @@ button {
 }
 
 button:hover {
-    background-color: #b08868;
+    background-color: #C39D7A;
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #1db954;
+  margin-bottom: 2rem;
+}
+
+.track {
+  margin-bottom: 2rem;
+}
+
+.track-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+iframe {
+  border-radius: 8px;
+  width: 100%;
+  height: 80px;
+}
+
 }
 
 /* Pesan respons */
-#responseMessage {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #fff;
-}
-
-/* Lagu / Spotify List */
-h1 {
-    color: #2c3e50;
-}
-
-.song-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 1.5em;
-}
-
-.song-list li {
-    margin: 1em 0;
-}
-
-.song-list a {
-    text-decoration: none;
-    font-size: 1.1em;
-    color: #1DB954; /* Spotify green */
-    transition: 0.2s;
-}
-
-.song-list a:hover {
-    color: #128c43;
-}
+#responseMessage
