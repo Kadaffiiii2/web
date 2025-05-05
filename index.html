@@ -1,332 +1,47 @@
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaaaaaaannnnnn Kadaffi</title>
-    <style>
-        /* Import font Poppins */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-
-        /* Styling untuk halaman */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #E2CEB1;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Container utama */
-        .container {
-            width: 80%;
-            max-width: 1000px;
-            background-color: #E2CEB1;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-
-        /* Header */
-        header {
-            background-color: #4B3619;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 8px 8px 0 0;
-        }
-
-        header img {
-            height: 60px;
-        }
-
-        /* Navigasi */
-        nav ul {
-            padding: 0;
-            list-style: none;
-            margin: 10px 0 0 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Book Recommendations */
-        .book-section {
-            margin-top: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
-        }
-
-        .book-section h2 {
-            text-align: center;
-            color: #4B3619;
-        }
-
-        .book-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .book-card {
-            background: #fdfdfd;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 220px;
-        }
-
-        .book-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .book-title {
-            font-weight: bold;
-            margin: 10px 0 5px;
-        }
-
-        .book-author {
-            font-size: 14px;
-            color: #555;
-        }
-
-        .book-description {
-            font-size: 12px;
-            margin: 5px 0 10px;
-            color: #777;
-        }
-
-        .download-btn {
-            display: block;
-            padding: 8px;
-            background: #4B3619;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-
-        .download-btn:hover {
-            background: #362511;
-        }
-
-        /* Event Section */
-        .event-section {
-            margin-top: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
-        }
-
-        .event-section h2 {
-            text-align: center;
-            color: #4B3619;
-        }
-
-        .event-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .event-card {
-            background: #fdfdfd;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 220px;
-        }
-
-        .event-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .event-title {
-            margin: 10px 0;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .event-link {
-            display: block;
-            padding: 8px;
-            background: #4B3619;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-
-        .event-link:hover {
-            background: #362511;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #4B3619;
-            height: 30px;
-            border-radius: 0 0 8px 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Day #30 - Music Player | AsmrProg</title>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
-            <h1>Perpustakaan Kadaffi</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Homepage</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="Media.html">Media</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </header>
 
-        <main>
-            <h2>Hallo! Selamat Datang di Perpustakaan Kadaaaaaaaafffffi</h2>
-            <p>Website ini menyediakan katalog buku terbaik untuk meningkatkan wawasan dan pengetahuan Anda.</p>
-
-            <!-- Book Recommendations -->
-            <section class="book-section">
-                <h2>Book Recommendations</h2>
-                <div class="book-container" id="book-list"></div>
-            </section>
-
-            <!-- Event Section -->
-            <section class="event-section">
-                <h2>Event Perpustakaan</h2>
-                <div class="event-container" id="event-list"></div>
-            </section>
-        </main>
-
-        <footer></footer>
+    <div class="background">
+        <img src="" id="bg-img">
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Data buku
-            const books = [
-                {
-                    title: "The Subtle Art of Not Giving a F*ck",
-                    author: "Mark Manson",
-                    description: "Pendekatan hidup dengan menerima keterbatasan dan ketidaksempurnaan.",
-                    cover: "https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg",
-                    file: "https://drive.google.com/file/d/1MmDJxq5Ai79g2K8Hg-YwuVOvKP4qb8mT/view?usp=drivesdk"
-                },
-                {
-                    title: "Rich Dad Poor Dad",
-                    author: "Robert Kiyosaki",
-                    description: "Pelajaran keuangan dari dua figur ayah yang berbeda.",
-                    cover: "https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg",
-                    file: "https://drive.google.com/file/d/1MkWfM-S075XMs_tHclD340QiJN_210NL/view?usp=sharing"
-                },
-                {
-                    title: "Think and Grow Rich",
-                    author: "Napoleon Hill",
-                    description: "Formula sukses berdasarkan pola pikir dan kebiasaan.",
-                    cover: "https://m.media-amazon.com/images/I/71UypkUjStL.jpg",
-                    file: "https://drive.google.com/file/d/1MkdhNi-LzfK5pBekQ4PxRQFwYD8k7Bc1/view?usp=sharing"
-                },
-                {   
-                    title: "Atomic Habits", 
-                    author: "James Clear", 
-                    description: "Membangun kebiasaan baik dari hal-hal kecil.", 
-                    cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
-                    file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
-                },
-                { 
-                    title: "Sapiens", 
-                    author: "Yuval Noah Harari", 
-                    description: "Sejarah singkat manusia dari awal peradaban.", 
-                    cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
-                    file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
-                }
-            ];
+    <div class="container">
+        <div class="player-img">
+            <img src="" class="active" id="cover">
+        </div>
 
-            // Data event
-            const events = [
-                {
-                    title: "Lomba Karya Tulis Ilmiah & Poster",
-                    image: "https://i.imgur.com/7pDtl9S.jpeg",
-                    link: "https://www.instagram.com/p/DH5v_rsTEV6/?igsh=ajJtdzdwYWQydzUx"
-                },
-                {
-                    title: "Lomba Eco Accounting: Business Model Canvas",
-                    image: "https://i.imgur.com/9XhcD1B.jpeg",
-                    link: "https://www.instagram.com/p/DHSfJVspH0K/?igsh=bWE0Z2hibm9jbmpz"
-                },
-                {
-                    title: "Lomba Esay Nasional",
-                    image: "https://i.imgur.com/AeSg9va.jpeg",
-                    link: "https://www.instagram.com/p/DHj8wJDzdr4/?igsh=bThlamxuajZ2dHo5"
-                },
-                {
-                    title: "Lomba Video Kreatif Akuntansi",
-                    image: "https://i.imgur.com/uGljZYU.jpeg",
-                    link: "https://www.instagram.com/p/DIL8op8TGpx/?igsh=Yjh4aHBhaDI4aGwx"
-                }
-            ];
+        <h2 id="music-title"></h2>
+        <h3 id="music-artist"></h3>
 
-            const bookList = document.getElementById("book-list");
-            const eventList = document.getElementById("event-list");
+        <div class="player-progress" id="player-progress">
+            <div class="progress" id="progress"></div>
+            <div class="music-duration">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
 
-            // Render buku
-            books.forEach(book => {
-                const bookCard = document.createElement("div");
-                bookCard.classList.add("book-card");
+        <div class="player-controls">
+            <i class="fa-solid fa-backward" title="Previous" id="prev"></i>
+            <i class="fa-solid fa-play play-button" title="Play" id="play"></i>
+            <i class="fa-solid fa-forward" title="Next" id="next"></i>
+        </div>
 
-                bookCard.innerHTML = `
-                    <img src="${book.cover}" alt="${book.title}">
-                    <h3 class="book-title">${book.title}</h3>
-                    <p class="book-author">by ${book.author}</p>
-                    <p class="book-description">${book.description}</p>
-                    <a href="${book.file}" target="_blank" class="download-btn">Baca Disini</a>
-                `;
+    </div>
 
-                bookList.appendChild(bookCard);
-            });
-
-            // Render event
-            events.forEach(event => {
-                const eventCard = document.createElement("div");
-                eventCard.classList.add("event-card");
-
-                eventCard.innerHTML = `
-                    <img src="${event.image}" alt="${event.title}">
-                    <p class="event-title">${event.title}</p>
-                    <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
-                `;
-
-                eventList.appendChild(eventCard);
-            });
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
+
 </html>
