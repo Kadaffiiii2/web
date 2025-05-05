@@ -5,9 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaaaaaaannnnnn Kadaffi</title>
     <style>
-        /* (Seluruh CSS tetap sama seperti yang kamu tulis) */
+        /* Import font Poppins */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-        /* ... (CSS lainnya tidak berubah, tetap dipertahankan) ... */
+
+        /* Styling untuk halaman */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #E2CEB1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container utama */
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: #E2CEB1;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        /* Header */
+        header {
+            background-color: #4B3619;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        /* Navigasi */
+        nav ul {
+            padding: 0;
+            list-style: none;
+            margin: 10px 0 0 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Book Recommendations */
+        .book-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .book-card {
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 220px;
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .book-title {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .book-author {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .book-description {
+            font-size: 12px;
+            margin: 5px 0 10px;
+            color: #777;
+        }
+
+        .download-btn {
+            display: block;
+            padding: 8px;
+            background: #4B3619;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .download-btn:hover {
+            background: #362511;
+        }
+
+        /* Event Section */
+        .event-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .event-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .event-card {
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 220px;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .event-title {
+            margin: 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .event-link {
+            display: block;
+            padding: 8px;
+            background: #4B3619;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .event-link:hover {
+            background: #362511;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4B3619;
+            height: 30px;
+            border-radius: 0 0 8px 8px;
+        }
     </style>
 </head>
 <body>
@@ -19,7 +203,7 @@
                 <ul>
                     <li><a href="index.html">Homepage</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="Media.html">Media</a></li>
+                    <li><a href="Media.html">About</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
@@ -39,36 +223,6 @@
             <section class="event-section">
                 <h2>Event Perpustakaan</h2>
                 <div class="event-container" id="event-list"></div>
-            </section>
-
-            <!-- Rekomendasi Musik Belajar -->
-            <section class="music-section">
-                <h2>🎧 Rekomendasi Musik Belajar</h2>
-
-                <div class="track">
-                    <div class="track-title">1. Paragraphs - Luke Chiang</div>
-                    <iframe src="https://open.spotify.com/embed/track/3Db7xz96RCGC1zEUpvyvAJ?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-
-                <div class="track">
-                    <div class="track-title">2. Shouldn't Be - Luke Chiang</div>
-                    <iframe src="https://open.spotify.com/embed/track/0sQLnDvAFf0drVRxE7C4Da?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-
-                <div class="track">
-                    <div class="track-title">3. Anchor - Novo Amor</div>
-                    <iframe src="https://open.spotify.com/embed/track/6sDQmWvMLwFgJCI6vnzPFZ?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-
-                <div class="track">
-                    <div class="track-title">4. Bundle of Joy - Michael Giacchino</div>
-                    <iframe src="https://open.spotify.com/embed/track/1r3OsSUJrJ0OfZKx6DJVg6?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-
-                <div class="track">
-                    <div class="track-title">5. Lights Are On - Tom Rosenthal</div>
-                    <iframe src="https://open.spotify.com/embed/track/7muTWZKEhzOuV2a5h7cXDL?utm_source=generator" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
             </section>
         </main>
 
@@ -143,9 +297,11 @@
             const bookList = document.getElementById("book-list");
             const eventList = document.getElementById("event-list");
 
+            // Render buku
             books.forEach(book => {
                 const bookCard = document.createElement("div");
                 bookCard.classList.add("book-card");
+
                 bookCard.innerHTML = `
                     <img src="${book.cover}" alt="${book.title}">
                     <h3 class="book-title">${book.title}</h3>
@@ -153,17 +309,21 @@
                     <p class="book-description">${book.description}</p>
                     <a href="${book.file}" target="_blank" class="download-btn">Baca Disini</a>
                 `;
+
                 bookList.appendChild(bookCard);
             });
 
+            // Render event
             events.forEach(event => {
                 const eventCard = document.createElement("div");
                 eventCard.classList.add("event-card");
+
                 eventCard.innerHTML = `
                     <img src="${event.image}" alt="${event.title}">
                     <p class="event-title">${event.title}</p>
                     <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
                 `;
+
                 eventList.appendChild(eventCard);
             });
         });
