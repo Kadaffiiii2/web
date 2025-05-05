@@ -3,105 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Music for Study</title>
+  <title>Belajar dengan Musik</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
       margin: 0;
-      padding: 20px;
-      color: #333;
+      padding: 2rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      color: #1db954;
+      margin-bottom: 2rem;
     }
 
-    .playlist {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      max-width: 800px;
-      margin: 0 auto;
+    .music-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
     }
 
-    .song {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .music-card {
+      background-color: #181818;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .music-card:hover {
+      transform: scale(1.02);
+    }
+
+    .cover {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .music-info {
+      padding: 1rem;
     }
 
     .title {
-      font-size: 1.2em;
-      margin-bottom: 10px;
+      font-size: 1.2rem;
       font-weight: bold;
     }
 
-    iframe {
-      width: 100%;
-      border-radius: 12px;
-      border: none;
+    .artist {
+      color: #b3b3b3;
+      margin-bottom: 1rem;
     }
 
-    @media (max-width: 600px) {
-      iframe {
-        height: 152px;
-      }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      background-color: #1db954;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 80px;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
-
-  <h1>🎧 Music for Study</h1>
-  <div class="playlist" id="playlist"></div>
+  <h1>Musik Teman Belajar 🎧</h1>
+  <div class="music-list" id="music-list"></div>
 
   <script>
     const songs = [
       {
-        title: "Paragraphs - Luke Chiang",
-        spotifyUrl: "https://open.spotify.com/embed/track/5wEFtpa2U2JeGbNgnN43PO"
+        title: "paragraphs",
+        artist: "Luke Chiang",
+        embed: "https://open.spotify.com/embed/track/0B7XgkdvnjqMdM6I1Xn2lU",
+        link: "https://open.spotify.com/track/0B7XgkdvnjqMdM6I1Xn2lU",
+        cover: "https://i.scdn.co/image/ab67616d0000b27331a04715dc3ef25caa2672ca"
       },
       {
-        title: "Shouldn't Be - Luke Chiang",
-        spotifyUrl: "https://open.spotify.com/embed/track/4Ql8R5rS2bIMdtS6l4cZxy"
+        title: "shouldn't be",
+        artist: "Luke Chiang",
+        embed: "https://open.spotify.com/embed/track/3vV3bCwz9RyXR4E6C0FUT6",
+        link: "https://open.spotify.com/track/3vV3bCwz9RyXR4E6C0FUT6",
+        cover: "https://i.scdn.co/image/ab67616d0000b2736aeea2c8ff85b15fa8fddae3"
       },
       {
-        title: "Anchor - Novo Amor",
-        spotifyUrl: "https://open.spotify.com/embed/track/7fY2vmK1tAq76z4vXM5wtc"
+        title: "anchor",
+        artist: "Novo Amor",
+        embed: "https://open.spotify.com/embed/track/2t0nsTYCxzkxjODKWzz2cP",
+        link: "https://open.spotify.com/track/2t0nsTYCxzkxjODKWzz2cP",
+        cover: "https://i.scdn.co/image/ab67616d0000b27324e5b44e1b20f09ab2e14ec5"
       },
       {
-        title: "Bundle of Joy - Michael Giacchino",
-        spotifyUrl: "https://open.spotify.com/embed/track/2ZhNQeHqcbI0qlfMLe5vGJ"
+        title: "bundle of joy",
+        artist: "Michael Giacchino",
+        embed: "https://open.spotify.com/embed/track/6xkryXuiZU3604bYusDkdP",
+        link: "https://open.spotify.com/track/6xkryXuiZU3604bYusDkdP",
+        cover: "https://i.scdn.co/image/ab67616d0000b27325fbe5033f7b8fe810ad9752"
       },
       {
-        title: "Lights Are On - Tom Rosenthal",
-        spotifyUrl: "https://open.spotify.com/embed/track/1CSdN4n2gIvKwhOvRuGcVU"
+        title: "lights are on",
+        artist: "Tom Rosenthal",
+        embed: "https://open.spotify.com/embed/track/1WhsELxAoYkWLBeWytawzj",
+        link: "https://open.spotify.com/track/1WhsELxAoYkWLBeWytawzj",
+        cover: "https://i.scdn.co/image/ab67616d0000b2739e6bc7879c0e03d77d2c176d"
       }
     ];
 
-    const playlistDiv = document.getElementById('playlist');
+    const container = document.getElementById("music-list");
 
     songs.forEach(song => {
-      const songDiv = document.createElement('div');
-      songDiv.className = 'song';
-
-      const title = document.createElement('div');
-      title.className = 'title';
-      title.textContent = song.title;
-
-      const iframe = document.createElement('iframe');
-      iframe.src = song.spotifyUrl;
-      iframe.width = "100%";
-      iframe.height = "80";
-      iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
-
-      songDiv.appendChild(title);
-      songDiv.appendChild(iframe);
-      playlistDiv.appendChild(songDiv);
+      const card = document.createElement("div");
+      card.className = "music-card";
+      card.innerHTML = `
+        <img src="${song.cover}" alt="${song.title}" class="cover"/>
+        <div class="music-info">
+          <div class="title">${song.title}</div>
+          <div class="artist">${song.artist}</div>
+          <div class="buttons">
+            <a class="btn" href="${song.link}" target="_blank">🎵 Buka Spotify</a>
+            <a class="btn" href="${song.link}" target="_blank">💾 Simpan</a>
+          </div>
+          <iframe src="${song.embed}" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      `;
+      container.appendChild(card);
     });
   </script>
-
 </body>
 </html>
