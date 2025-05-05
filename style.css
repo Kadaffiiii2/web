@@ -18,6 +18,7 @@ body {
     border-radius: 10px;
     width: 350px;
     text-align: center;
+    max-width: 600px;
 }
 
 /* Judul */
@@ -45,7 +46,9 @@ label {
     margin-bottom: 5px;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
     width: 100%;
     padding: 10px;
     border: none;
@@ -72,54 +75,38 @@ button {
 }
 
 button:hover {
-    background-color: #C39D7A;
+    background-color: #b08868;
 }
 
 /* Pesan respons */
-#responseMessage
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #fefefe;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+#responseMessage {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #fff;
 }
 
-.container {
-  text-align: center;
-  background-color: #ffffff;
-  padding: 2em;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  width: 90%;
-}
-
+/* Lagu / Spotify List */
 h1 {
-  color: #2c3e50;
+    color: #2c3e50;
 }
 
 .song-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5em;
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5em;
 }
 
 .song-list li {
-  margin: 1em 0;
+    margin: 1em 0;
 }
 
 .song-list a {
-  text-decoration: none;
-  font-size: 1.1em;
-  color: #1DB954; /* Spotify green */
-  transition: 0.2s;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #1DB954; /* Spotify green */
+    transition: 0.2s;
 }
 
 .song-list a:hover {
-  color: #128c43;
+    color: #128c43;
 }
