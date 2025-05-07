@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Kadaffi</title>
     <style>
+        /* Import font Poppins */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
+        /* Styling untuk halaman */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #E2CEB1;
@@ -16,6 +18,7 @@
             justify-content: center;
         }
 
+        /* Container utama */
         .container {
             width: 80%;
             max-width: 1000px;
@@ -26,6 +29,7 @@
             border-radius: 8px;
         }
 
+        /* Header */
         header {
             background-color: #4B3619;
             color: white;
@@ -38,6 +42,7 @@
             height: 60px;
         }
 
+        /* Navigasi */
         nav ul {
             padding: 0;
             list-style: none;
@@ -45,9 +50,8 @@
         }
 
         nav ul li {
-            display: inline-block;
+            display: inline;
             margin: 0 15px;
-            position: relative;
         }
 
         nav ul li a {
@@ -56,38 +60,36 @@
             font-weight: bold;
         }
 
-        nav ul li ul {
+        /* Dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
             display: none;
             position: absolute;
             background-color: #4B3619;
-            padding: 10px 0;
-            border-radius: 5px;
-            top: 100%;
-            left: 0;
-            z-index: 1000;
-            min-width: 150px;
+            min-width: 160px;
+            z-index: 1;
         }
 
-        nav ul li:hover ul {
+        .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        nav ul li ul li {
-            display: block;
-            margin: 0;
-            padding: 5px 20px;
-        }
-
-        nav ul li ul li a {
+        .dropdown-content a {
             color: white;
+            padding: 10px;
             text-decoration: none;
-            font-weight: normal;
+            display: block;
         }
 
-        nav ul li ul li a:hover {
-            text-decoration: underline;
+        .dropdown-content a:hover {
+            background-color: #362511;
         }
 
+        /* Book Recommendations */
         .book-section {
             margin-top: 20px;
             padding: 20px;
@@ -155,63 +157,7 @@
             background: #362511;
         }
 
-        .event-section {
-            margin-top: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
-        }
-
-        .event-section h2 {
-            text-align: center;
-            color: #4B3619;
-        }
-
-        .event-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .event-card {
-            background: #fdfdfd;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 220px;
-        }
-
-        .event-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .event-title {
-            margin: 10px 0;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .event-link {
-            display: block;
-            padding: 8px;
-            background: #4B3619;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-
-        .event-link:hover {
-            background: #362511;
-        }
-
+        /* Footer */
         footer {
             background-color: #4B3619;
             height: 30px;
@@ -227,15 +173,16 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Homepage</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li>
-                        <a href="Media.html">Media</a>
-                        <ul>
-                            <li><a href="audio.html">Audio</a></li>
-                            <li><a href="video.html">Video</a></li>
-                            <li><a href="ebook.html">E-Book</a></li>
-                        </ul>
+                    <li class="dropdown">
+                        <a href="#">About</a>
+                        <div class="dropdown-content">
+                            <a href="about.html#layanan">Layanan Kami</a>
+                            <a href="about.html#sejarah">Sejarah Perpustakaan</a>
+                            <a href="about.html#informasi">Informasi Pribadi</a>
+                            <a href="about.html#tentang">Tentang Kami</a>
+                        </div>
                     </li>
+                    <li><a href="Media.html">Media</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
@@ -245,15 +192,27 @@
             <h2>Hallo! Selamat Datang di Perpustakaan Kadaffi</h2>
             <p>Website ini menyediakan katalog buku terbaik untuk meningkatkan wawasan dan pengetahuan Anda.</p>
 
-            <section class="book-section">
-                <h2>Book Recommendations</h2>
-                <div class="book-container" id="book-list"></div>
+            <!-- Book Recommendations -->
+            <section class="book-section" id="layanan">
+                <h2>Layanan Kami</h2>
+                <p>Perpustakaan Kadaffi menyediakan berbagai layanan inovatif untuk pengguna, termasuk akses buku digital, seminar online, dan layanan konsultasi perpustakaan.</p>
             </section>
 
-            <section class="event-section">
-                <h2>Event Perpustakaan</h2>
-                <div class="event-container" id="event-list"></div>
+            <section class="book-section" id="sejarah">
+                <h2>Sejarah Perpustakaan</h2>
+                <p>Perpustakaan Kadaffi didirikan pada tahun 2021 dengan tujuan untuk menyediakan akses pengetahuan yang lebih luas kepada masyarakat dan mahasiswa, serta mengembangkan koleksi buku dan media digital.</p>
             </section>
+
+            <section class="book-section" id="informasi">
+                <h2>Informasi Pribadi</h2>
+                <p>Informasi pribadi tentang pengelola dan tim perpustakaan dapat dilihat lebih lanjut pada halaman ini.</p>
+            </section>
+
+            <section class="book-section" id="tentang">
+                <h2>Tentang Kami</h2>
+                <p>Perpustakaan Kadaffi adalah sebuah perpustakaan pribadi yang bertujuan untuk meningkatkan literasi digital dan menyediakan akses pengetahuan yang luas kepada pengunjung melalui koleksi buku dan media online.</p>
+            </section>
+
         </main>
 
         <footer></footer>
@@ -261,6 +220,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Data buku
             const books = [
                 {
                     title: "The Subtle Art of Not Giving a F*ck",
@@ -282,49 +242,11 @@
                     description: "Formula sukses berdasarkan pola pikir dan kebiasaan.",
                     cover: "https://m.media-amazon.com/images/I/71UypkUjStL.jpg",
                     file: "https://drive.google.com/file/d/1MkdhNi-LzfK5pBekQ4PxRQFwYD8k7Bc1/view?usp=sharing"
-                },
-                {   
-                    title: "Atomic Habits", 
-                    author: "James Clear", 
-                    description: "Membangun kebiasaan baik dari hal-hal kecil.", 
-                    cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
-                    file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
-                },
-                { 
-                    title: "Sapiens", 
-                    author: "Yuval Noah Harari", 
-                    description: "Sejarah singkat manusia dari awal peradaban.", 
-                    cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
-                    file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
                 }
             ];
 
-            const events = [
-                {
-                    title: "Lomba Karya Tulis Ilmiah & Poster",
-                    image: "https://i.imgur.com/7pDtl9S.jpeg",
-                    link: "https://www.instagram.com/p/DH5v_rsTEV6/?igsh=ajJtdzdwYWQydzUx"
-                },
-                {
-                    title: "Lomba Eco Accounting: Business Model Canvas",
-                    image: "https://i.imgur.com/9XhcD1B.jpeg",
-                    link: "https://www.instagram.com/p/DHSfJVspH0K/?igsh=bWE0Z2hibm9jbmpz"
-                },
-                {
-                    title: "Lomba Esay Nasional",
-                    image: "https://i.imgur.com/AeSg9va.jpeg",
-                    link: "https://www.instagram.com/p/DHj8wJDzdr4/?igsh=bThlamxuajZ2dHo5"
-                },
-                {
-                    title: "Lomba Video Kreatif Akuntansi",
-                    image: "https://i.imgur.com/uGljZYU.jpeg",
-                    link: "https://www.instagram.com/p/DIL8op8TGpx/?igsh=Yjh4aHBhaDI4aGwx"
-                }
-            ];
-
+            // Render buku
             const bookList = document.getElementById("book-list");
-            const eventList = document.getElementById("event-list");
-
             books.forEach(book => {
                 const bookCard = document.createElement("div");
                 bookCard.classList.add("book-card");
@@ -338,19 +260,6 @@
                 `;
 
                 bookList.appendChild(bookCard);
-            });
-
-            events.forEach(event => {
-                const eventCard = document.createElement("div");
-                eventCard.classList.add("event-card");
-
-                eventCard.innerHTML = `
-                    <img src="${event.image}" alt="${event.title}">
-                    <p class="event-title">${event.title}</p>
-                    <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
-                `;
-
-                eventList.appendChild(eventCard);
             });
         });
     </script>
