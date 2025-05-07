@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaaaaaaannnnnn Kadaffi</title>
     <style>
-        /* Import font Poppins */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
-        /* Styling untuk halaman */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #E2CEB1;
@@ -18,7 +16,6 @@
             justify-content: center;
         }
 
-        /* Container utama */
         .container {
             width: 80%;
             max-width: 1000px;
@@ -29,7 +26,6 @@
             border-radius: 8px;
         }
 
-        /* Header */
         header {
             background-color: #4B3619;
             color: white;
@@ -42,7 +38,6 @@
             height: 60px;
         }
 
-        /* Navigasi */
         nav ul {
             padding: 0;
             list-style: none;
@@ -50,8 +45,9 @@
         }
 
         nav ul li {
-            display: inline;
+            display: inline-block;
             margin: 0 15px;
+            position: relative;
         }
 
         nav ul li a {
@@ -60,7 +56,38 @@
             font-weight: bold;
         }
 
-        /* Book Recommendations */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4B3619;
+            padding: 10px 0;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            min-width: 150px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+            margin: 0;
+            padding: 5px 20px;
+        }
+
+        nav ul li ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        nav ul li ul li a:hover {
+            text-decoration: underline;
+        }
+
         .book-section {
             margin-top: 20px;
             padding: 20px;
@@ -128,7 +155,6 @@
             background: #362511;
         }
 
-        /* Event Section */
         .event-section {
             margin-top: 20px;
             padding: 20px;
@@ -186,7 +212,6 @@
             background: #362511;
         }
 
-        /* Footer */
         footer {
             background-color: #4B3619;
             height: 30px;
@@ -203,7 +228,14 @@
                 <ul>
                     <li><a href="index.html">Homepage</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="Media.html">Media</a></li>
+                    <li>
+                        <a href="Media.html">Media</a>
+                        <ul>
+                            <li><a href="audio.html">Audio</a></li>
+                            <li><a href="video.html">Video</a></li>
+                            <li><a href="ebook.html">E-Book</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
@@ -213,13 +245,11 @@
             <h2>Hallo! Selamat Datang di Perpustakaan Kadaaaaaaaafffffi</h2>
             <p>Website ini menyediakan katalog buku terbaik untuk meningkatkan wawasan dan pengetahuan Anda.</p>
 
-            <!-- Book Recommendations -->
             <section class="book-section">
                 <h2>Book Recommendations</h2>
                 <div class="book-container" id="book-list"></div>
             </section>
 
-            <!-- Event Section -->
             <section class="event-section">
                 <h2>Event Perpustakaan</h2>
                 <div class="event-container" id="event-list"></div>
@@ -231,7 +261,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Data buku
             const books = [
                 {
                     title: "The Subtle Art of Not Giving a F*ck",
@@ -269,8 +298,7 @@
                     file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
                 }
             ];
-    
-            // Data event
+
             const events = [
                 {
                     title: "Lomba Karya Tulis Ilmiah & Poster",
@@ -297,7 +325,6 @@
             const bookList = document.getElementById("book-list");
             const eventList = document.getElementById("event-list");
 
-            // Render buku
             books.forEach(book => {
                 const bookCard = document.createElement("div");
                 bookCard.classList.add("book-card");
@@ -313,7 +340,6 @@
                 bookList.appendChild(bookCard);
             });
 
-            // Render event
             events.forEach(event => {
                 const eventCard = document.createElement("div");
                 eventCard.classList.add("event-card");
