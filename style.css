@@ -1,82 +1,143 @@
-/* Styling Global */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5e1da;
+/* Navigasi */
+nav {
+    background-color: #8b5e3c;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Pencarian */
+.search-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin: 10px 0;
+}
+
+.search-container input[type="text"] {
+    padding: 8px;
+    width: 200px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 8px 12px;
+    background-color: #4B3619;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #362511;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
-/* Container */
-.container {
-    background: #8b5e3c;
-    color: #fff;
-    padding: 25px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 350px;
-    text-align: center;
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
 }
 
-/* Judul */
-h2 {
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-/* Subjudul */
-.subtitle {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-bottom: 15px;
-}
-
-/* Input Group */
-.input-group {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-input, textarea, select {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    background-color: #f8ebe6;
-}
-
-textarea {
-    resize: none;
-}
-
-/* Tombol */
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #C39D7A;
+nav ul li a {
     color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    display: inline-block;
+}
+
+nav ul li:hover > a {
+    background-color: #c39d7a;
+    border-radius: 5px;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #8b5e3c;
+    border-radius: 5px;
+    padding: 10px 0;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    display: block;
+    margin: 0;
+}
+
+nav ul li ul li a {
+    padding: 8px 15px;
+    display: block;
+    color: white;
+    font-weight: normal;
+}
+
+nav ul li ul li a:hover {
+    background-color: #c39d7a;
+    border-radius: 0;
+}
+
+/* Form Login */
+.login-section {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.login-section h2 {
+    text-align: center;
+    color: #4B3619;
+    margin-bottom: 15px;
+}
+
+.login-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-section label {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.login-section input[type="text"],
+.login-section input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-section button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4B3619;
+    color: white;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-button:hover {
-    background-color: #C39D7A;
-}
-
-/* Pesan respons */
-#responseMessage {
-    margin-top: 10px;
-    font-size: 14px;
+.login-section button:hover {
+    background-color: #362511;
 }
