@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Kadaffi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
@@ -88,7 +89,12 @@
             text-decoration: underline;
         }
 
-        .book-section {
+        main h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .book-section, .event-section {
             margin-top: 20px;
             padding: 20px;
             background: white;
@@ -96,19 +102,14 @@
             box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
         }
 
-        .book-section h2 {
-            text-align: center;
-            color: #4B3619;
-        }
-
-        .book-container {
+        .book-container, .event-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
 
-        .book-card {
+        .book-card, .event-card {
             background: #fdfdfd;
             padding: 15px;
             border-radius: 8px;
@@ -117,10 +118,8 @@
             width: 220px;
         }
 
-        .book-card img {
+        .book-card img, .event-card img {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
             border-radius: 8px;
         }
 
@@ -140,7 +139,7 @@
             color: #777;
         }
 
-        .download-btn {
+        .download-btn, .event-link {
             display: block;
             padding: 8px;
             background: #4B3619;
@@ -151,65 +150,32 @@
             margin-top: 5px;
         }
 
-        .download-btn:hover {
+        .download-btn:hover, .event-link:hover {
             background: #362511;
         }
 
-        .event-section {
-            margin-top: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
-        }
-
-        .event-section h2 {
+        #event-perpustakaan h3 {
             text-align: center;
             color: #4B3619;
         }
 
-        .event-container {
+        .event-header {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 10px;
         }
 
-        .event-card {
-            background: #fdfdfd;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 220px;
+        .event-date i, .event-detail i {
+            margin-right: 5px;
+            color: #4B3619;
         }
 
-        .event-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .event-title {
-            margin: 10px 0;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .event-link {
-            display: block;
-            padding: 8px;
-            background: #4B3619;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-
-        .event-link:hover {
-            background: #362511;
+        .event-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 10px;
         }
 
         footer {
@@ -253,6 +219,17 @@
                 <h2>Event Perpustakaan</h2>
                 <div class="event-container" id="event-list"></div>
             </section>
+
+            <!-- Event Perpustakaan Section Tambahan -->
+            <section id="event-perpustakaan">
+                <div class="container">
+                    <h3><i class="fa-solid fa-calendar-days"></i> Event Terkini Perpustakaan</h3>
+                    <div class="event-container">
+                        <!-- Konten event akan ditambahkan lewat JS jika perlu -->
+                        <!-- Struktur HTML bisa disalin sesuai template sebelumnya -->
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer></footer>
@@ -268,165 +245,17 @@
                     cover: "https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg",
                     file: "https://drive.google.com/file/d/1MmDJxq5Ai79g2K8Hg-YwuVOvKP4qb8mT/view?usp=drivesdk"
                 },
-                {
-                    title: "Rich Dad Poor Dad",
-                    author: "Robert Kiyosaki",
-                    description: "Pelajaran keuangan dari dua figur ayah yang berbeda.",
-                    cover: "https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg",
-                    file: "https://drive.google.com/file/d/1MkWfM-S075XMs_tHclD340QiJN_210NL/view?usp=sharing"
-                },
-                {
-                    title: "Think and Grow Rich",
-                    author: "Napoleon Hill",
-                    description: "Formula sukses berdasarkan pola pikir dan kebiasaan.",
-                    cover: "https://m.media-amazon.com/images/I/71UypkUjStL.jpg",
-                    file: "https://drive.google.com/file/d/1MkdhNi-LzfK5pBekQ4PxRQFwYD8k7Bc1/view?usp=sharing"
-                },
-                {   
-                    title: "Atomic Habits", 
-                    author: "James Clear", 
-                    description: "Membangun kebiasaan baik dari hal-hal kecil.", 
-                    cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
-                    file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
-                },
-                { 
-                    title: "Sapiens", 
-                    author: "Yuval Noah Harari", 
-                    description: "Sejarah singkat manusia dari awal peradaban.", 
-                    cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
-                    file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
-                }
+                // Tambahan buku lain...
             ];
 
-           <!-- Event Perpustakaan Section -->
-<section id="event-perpustakaan">
-    <div class="container">
-        <h3>
-            <i class="fa-solid fa-calendar-days"></i>
-            Event Terkini Perpustakaan
-        </h3>
-        
-        <div class="event-carousel-container">
-            <div class="event-carousel">
-                <div class="event-card">
-                    <div class="event-header">
-                        <div class="event-date">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>10 Mei 2025</span>
-                        </div>
-                        <div class="event-badge">Upcoming</div>
-                    </div>
-                    <div class="event-body">
-                        <h2 class="event-title">Seminar: Empowering Future Engineers, Navigating Industries in the Digital Era</h2>
-                        <div class="event-details">
-                            <div class="event-detail">
-                                <i class="fa-regular fa-clock"></i>
-                                <span>09:00 - 13:00 WIB</span>
-                            </div>
-                            <div class="event-detail">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Auditorium Kampus 2 UAJY</span>
-                            </div>
-                        </div>
-                        <p class="event-desc">Perpustakaan USU bekerjasama dengan SAGE, kembali mengadakan Workshop cara menerbitkan artikel jurnal bersama dengan Dr. Lim Khee Hiang.</p>
-                        <a href="https://www.instagram.com/p/DI8G7Fuzgqx/?igsh=MTQxYXpqbDNjcWM2bQ==" target="_blank" class="event-link">Baca Selengkapnya</a>
-                    </div>
-                </div>
-                
-                <div class="event-card">
-                    <div class="event-header">
-                        <div class="event-date">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>6 Mei 2025</span>
-                        </div>
-                        <div class="event-badge">Upcoming</div>
-                    </div>
-                    <div class="event-body">
-                        <h2 class="event-title">Seminar: Trend Konten dalam Promosi Perpustakaan di Era Digital</h2>
-                        <div class="event-details">
-                            <div class="event-detail">
-                                <i class="fa-regular fa-clock"></i>
-                                <span>08:30 - 12:30 WIB</span>
-                            </div>
-                            <div class="event-detail">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Aulia Graha Pustaloka DISPUSIPDA JABAR</span>
-                            </div>
-                        </div>
-                        <p class="event-desc">Perdalam ilmu bersama Perpusnas! Persembahan kelas literasi panduan pustakawan dan pemustaka dalam riset untuk merayakan Ulang Tahun Perpustakaan Nasional RI.</p>
-                        <a href="https://www.instagram.com/p/DIs1q7Iz8Jj/?igsh=aXZ6Nmp6OWpxcjcw" target="_blank" class="event-link">Baca Selengkapnya</a>
-                    </div>
-                </div>
-                
-                <div class="event-card">
-                    <div class="event-header">
-                        <div class="event-date">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>6 Mei 2025</span>
-                        </div>
-                        <div class="event-badge">Selesai</div>
-                    </div>
-                    <div class="event-body">
-                        <h2 class="event-title">Seminar: Memabngun Perspektif dan Kesadaran Mahasiswa terhadap Publik Speaking</h2>
-                        <div class="event-details">
-                            <div class="event-detail">
-                                <i class="fa-regular fa-clock"></i>
-                                <span>08:30 - selesai WIB</span>
-                            </div>
-                            <div class="event-detail">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Online Via Zoom</span>
-                            </div>
-                        </div>
-                        <p class="event-desc">Belajar Data BPS dan cari data secara kilat. Kerjasama Badan Pusat Statistik Sumut bersama USU dan UMSU.</p>
-                        <a href="https://www.instagram.com/p/DJQIUHrSRDz/?igsh=bHA5dTdjeHdpaGg4" target="_blank" class="event-link">Baca Selengkapnya</a>
-                    </div>
-                </div>
-                
-                <div class="event-card">
-                    <div class="event-header">
-                        <div class="event-date">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>24 Mei 2025</span>
-                        </div>
-                        <div class="event-badge">Selesai</div>
-                    </div>
-                    <div class="event-body">
-                        <h2 class="event-title">Seminar: AI & Akademik: Solusi,Ancaman, atau Kawan Belajar?</h2>
-                        <div class="event-details">
-                            <div class="event-detail">
-                                <i class="fa-regular fa-clock"></i>
-                                <span>08:00 - Selesai</span>
-                            </div>
-                            <div class="event-detail">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Aula F2 Universitas WISNUWARDHANA</span>
-                            </div>
-                        </div>
-                        <p class="event-desc">Perpustakaan USU kembali mengadakan kelas literasi bersama Dosen Fasilkom TI USU, bekerjasama dengan Sagung Seto meningkatkan literasi AI mahasiswa.</p>
-                        <a href="https://www.instagram.com/p/DJKuK6kzKUA/?igsh=bm40NXFnZWIxdnF6" target="_blank" class="event-link">Baca Selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="event-carousel-controls">
-                <button class="carousel-button prev-button" aria-label="Event sebelumnya">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <div class="carousel-indicators">
-                    <!-- Indicators will be added via JavaScript -->
-                </div>
-                <button class="carousel-button next-button" aria-label="Event berikutnya">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-        
-        <div class="view-all-button">
-            <a href="#" class="view-all-link">Lihat Semua Event <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-    </div>
-</section>
+            const events = [
+                {
+                    title: "Lomba Karya Tulis Ilmiah & Poster",
+                    image: "https://i.imgur.com/7pDtl9S.jpeg",
+                    link: "https://www.instagram.com/p/DH5v_rsTEV6/?igsh=ajJtdzdwYWQydzUx"
+                },
+                // Tambahan event lain...
+            ];
 
             const bookList = document.getElementById("book-list");
             const eventList = document.getElementById("event-list");
@@ -434,7 +263,6 @@
             books.forEach(book => {
                 const bookCard = document.createElement("div");
                 bookCard.classList.add("book-card");
-
                 bookCard.innerHTML = `
                     <img src="${book.cover}" alt="${book.title}">
                     <h3 class="book-title">${book.title}</h3>
@@ -442,255 +270,20 @@
                     <p class="book-description">${book.description}</p>
                     <a href="${book.file}" target="_blank" class="download-btn">Baca Disini</a>
                 `;
-
                 bookList.appendChild(bookCard);
             });
 
             events.forEach(event => {
                 const eventCard = document.createElement("div");
                 eventCard.classList.add("event-card");
-
                 eventCard.innerHTML = `
                     <img src="${event.image}" alt="${event.title}">
                     <p class="event-title">${event.title}</p>
                     <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
                 `;
-
                 eventList.appendChild(eventCard);
-            <script>
-		alert("Selamat Datang di Perpustakaan Fanny Fahira!");
-	</script>   
-	
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$(".bg-loader").hide();
-		})
-	</script>
-
-	<script>
-  		const books = [
-    			"The Little Stoicism",
-    			"Dunia Sophie",
-    			"The Midnight Library"
-    			// Tambahkan lagi sesuai judul buku kamu
-  		];
-
-  		const input = document.getElementById('searchInput');
-  		const suggestions = document.getElementById('suggestions');
-
-  		input.addEventListener('input', () => {
-    			const value = input.value.toLowerCase();
-    			suggestions.innerHTML = '';
-
-    		if (value) {
-      			const filtered = books.filter(book => book.toLowerCase().includes(value));
-      			filtered.forEach(book => {
-        			const li = document.createElement('li');
-        			li.textContent = book;
-        			li.onclick = () => {
-          				input.value = book;
-          				suggestions.innerHTML = '';
-          				filterBooks();
-        			};
-        			suggestions.appendChild(li);
-      			});
-    		}
-  		});
-
-  		function filterBooks() {
-    			const filter = input.value.toLowerCase();
-    			const cards = document.querySelectorAll('.book-card');
-
-    			cards.forEach(card => {
-      				const text = card.innerText.toLowerCase();
-      				card.style.display = text.includes(filter) ? 'block' : 'none';
-    			});
-  		}
-
-  		function resetSearch() {
-    			input.value = '';
-    			suggestions.innerHTML = '';
-    			filterBooks();
-
-	        }
-	</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Event carousel functionality
-    const carousel = document.querySelector('.event-carousel');
-    const cards = document.querySelectorAll('.event-card');
-    const prevButton = document.querySelector('.prev-button');
-    const nextButton = document.querySelector('.next-button');
-    const indicatorsContainer = document.querySelector('.carousel-indicators');
-    
-    // Configuration
-    const itemsPerView = window.innerWidth >= 768 ? 2 : 1;
-    const cardWidth = carousel.offsetWidth / itemsPerView;
-    const totalItems = cards.length;
-    const totalViews = Math.ceil(totalItems / itemsPerView);
-    
-    // Current state
-    let currentIndex = 0;
-    let autoplayInterval;
-    const autoplayDelay = 6000; // 6 seconds
-    
-    // Create indicators based on the number of views
-    for (let i = 0; i < totalViews; i++) {
-        const indicator = document.createElement('div');
-        indicator.classList.add('carousel-indicator');
-        if (i === 0) indicator.classList.add('active');
-        
-        indicator.addEventListener('click', () => {
-            goToSlide(i);
+            });
         });
-        
-        indicatorsContainer.appendChild(indicator);
-    }
-    
-    const indicators = document.querySelectorAll('.carousel-indicator');
-    
-    // Set up event cards
-    cards.forEach((card, index) => {
-        // Set badge based on date
-        const dateText = card.querySelector('.event-date span').textContent;
-        const eventDate = new Date(dateText);
-        const today = new Date();
-        
-        const badge = card.querySelector('.event-badge');
-        if (eventDate < today) {
-            badge.textContent = 'Selesai';
-            badge.style.backgroundColor = '#718096';
-        } else {
-            badge.textContent = 'Upcoming';
-        }
-        
-        // Add hover effect animation
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px)';
-            this.style.boxShadow = '0 15px 30px rgba(49, 130, 206, 0.25)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 10px 25px rgba(49, 130, 206, 0.1)';
-        });
-    });
-    
-    // Go to a specific slide
-    function goToSlide(index) {
-        if (index < 0) {
-            index = 0;
-        } else if (index >= totalViews) {
-            index = totalViews - 1;
-        }
-        
-        currentIndex = index;
-        const translateX = -index * (cardWidth * itemsPerView + 20); // 20 for gap
-        
-        carousel.style.transform = `translateX(${translateX}px)`;
-        
-        // Update indicators
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === currentIndex);
-        });
-        
-        // Reset autoplay timer
-        resetAutoplay();
-    }
-    
-    // Navigate to previous slide
-    function prevSlide() {
-        goToSlide(currentIndex - 1);
-    }
-    
-    // Navigate to next slide
-    function nextSlide() {
-        goToSlide(currentIndex + 1);
-    }
-    
-    // Button event listeners
-    prevButton.addEventListener('click', prevSlide);
-    nextButton.addEventListener('click', nextSlide);
-    
-    // Start autoplay
-    function startAutoplay() {
-        autoplayInterval = setInterval(() => {
-            if (currentIndex >= totalViews - 1) {
-                goToSlide(0);
-            } else {
-                goToSlide(currentIndex + 1);
-            }
-        }, autoplayDelay);
-    }
-    
-    // Reset autoplay timer
-    function resetAutoplay() {
-        clearInterval(autoplayInterval);
-        startAutoplay();
-    }
-    
-    // Initialize autoplay
-    startAutoplay();
-    
-    // Pause autoplay on hover
-    carousel.addEventListener('mouseenter', () => {
-        clearInterval(autoplayInterval);
-    });
-    
-    // Resume autoplay when mouse leaves
-    carousel.addEventListener('mouseleave', () => {
-        startAutoplay();
-    });
-    
-    // Handle touch events for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        clearInterval(autoplayInterval);
-    }, {passive: true});
-    
-    carousel.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-        startAutoplay();
-    }, {passive: true});
-    
-    function handleSwipe() {
-        const difference = touchStartX - touchEndX;
-        if (difference > 50) {
-            // Swipe left, go to next slide
-            nextSlide();
-        } else if (difference < -50) {
-            // Swipe right, go to previous slide
-            prevSlide();
-        }
-    }
-    
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        // Recalculate dimensions
-        const newItemsPerView = window.innerWidth >= 768 ? 2 : 1;
-        
-        // Only update if the items per view changes
-        if (newItemsPerView !== itemsPerView) {
-            location.reload(); // Simple solution to handle responsive change
-        }
-    });
-    
-    // Add keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevSlide();
-        } else if (e.key === 'ArrowRight') {
-            nextSlide();
-        }
-    });
-});
-</script>
-
-    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
 </body>
 </html>
