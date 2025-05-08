@@ -1,5 +1,6 @@
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Mencegah reload halaman
+// Validasi Form Kontak
+document.getElementById("contactForm")?.addEventListener("submit", function(event) {
+    event.preventDefault();
 
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
@@ -10,54 +11,52 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     if (name && email && category && message) {
         responseMessage.textContent = `Pesan Anda (${category}) berhasil dikirim!`;
         responseMessage.style.color = "#4CAF50";
-
-        // Reset form setelah sukses
-        document.getElementById("contactForm").reset();
+        this.reset();
     } else {
         responseMessage.textContent = "Harap isi semua bidang!";
         responseMessage.style.color = "#FF5733";
-        const tracks = [
-  {
-    title: "1. Paragraphs - Luke Chiang",
-    spotifyId: "3Db7xz96RCGC1zEUpvyvAJ"
-  },
-  {
-    title: "2. Shouldn't Be - Luke Chiang",
-    spotifyId: "0sQLnDvAFf0drVRxE7C4Da"
-  },
-  {
-    title: "3. Anchor - Novo Amor",
-    spotifyId: "6sDQmWvMLwFgJCI6vnzPFZ"
-  },
-  {
-    title: "4. Bundle of Joy - Michael Giacchino",
-    spotifyId: "1r3OsSUJrJ0OfZKx6DJVg6"
-  },
-  {
-    title: "5. Lights Are On - Tom Rosenthal",
-    spotifyId: "7muTWZKEhzOuV2a5h7cXDL"
-  }
-];
-
-const playlistContainer = document.getElementById("playlist");
-
-tracks.forEach((track) => {
-  const trackDiv = document.createElement("div");
-  trackDiv.className = "track";
-
-  const title = document.createElement("div");
-  title.className = "track-title";
-  title.textContent = track.title;
-
-  const iframe = document.createElement("iframe");
-  iframe.src = `https://open.spotify.com/embed/track/${track.spotifyId}?utm_source=generator`;
-  iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
-  iframe.loading = "lazy";
-
-  trackDiv.appendChild(title);
-  trackDiv.appendChild(iframe);
-  playlistContainer.appendChild(trackDiv);
+    }
 });
 
+// Fungsi pencarian
+document.getElementById("searchButton")?.addEventListener("click", function () {
+    const query = document.getElementById("searchInput").value.trim().toLowerCase();
+    if (!query) return;
+
+    let results = [];
+
+    // Cek di daftar buku
+    document.querySelectorAll(".book-card").forEach(card => {
+        const title = card.querySelector(".book-title").textContent.toLowerCase();
+        if (title.includes(query)) results.push(card);
+    });
+
+    // Tampilkan hasil
+    if (results.length > 0) {
+        alert(`Ditemukan ${results.length} hasil untuk: "${query}"`);
+        window.scrollTo({ top: results[0].offsetTop - 80, behavior: 'smooth' });
+    } else {
+        alert("Buku tidak ditemukan.");
+    }
+});
+
+// Validasi Login
+document.getElementById("loginForm")?.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const username = document.getElementById("loginUsername").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
+    const loginMsg = document.getElementById("loginMessage");
+
+    if (username === "" || password === "") {
+        loginMsg.textContent = "Username dan password harus diisi!";
+        loginMsg.style.color = "red";
+    } else if (username === "admin" && password === "1234") {
+        loginMsg.textContent = "Login berhasil!";
+        loginMsg.style.color = "green";
+        this.reset();
+    } else {
+        loginMsg.textContent = "Username atau password salah!";
+        loginMsg.style.color = "red";
     }
 });
