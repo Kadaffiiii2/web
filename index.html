@@ -457,8 +457,240 @@
                 `;
 
                 eventList.appendChild(eventCard);
-            });
+            <script>
+		alert("Selamat Datang di Perpustakaan Fanny Fahira!");
+	</script>   
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".bg-loader").hide();
+		})
+	</script>
+
+	<script>
+  		const books = [
+    			"The Little Stoicism",
+    			"Dunia Sophie",
+    			"The Midnight Library"
+    			// Tambahkan lagi sesuai judul buku kamu
+  		];
+
+  		const input = document.getElementById('searchInput');
+  		const suggestions = document.getElementById('suggestions');
+
+  		input.addEventListener('input', () => {
+    			const value = input.value.toLowerCase();
+    			suggestions.innerHTML = '';
+
+    		if (value) {
+      			const filtered = books.filter(book => book.toLowerCase().includes(value));
+      			filtered.forEach(book => {
+        			const li = document.createElement('li');
+        			li.textContent = book;
+        			li.onclick = () => {
+          				input.value = book;
+          				suggestions.innerHTML = '';
+          				filterBooks();
+        			};
+        			suggestions.appendChild(li);
+      			});
+    		}
+  		});
+
+  		function filterBooks() {
+    			const filter = input.value.toLowerCase();
+    			const cards = document.querySelectorAll('.book-card');
+
+    			cards.forEach(card => {
+      				const text = card.innerText.toLowerCase();
+      				card.style.display = text.includes(filter) ? 'block' : 'none';
+    			});
+  		}
+
+  		function resetSearch() {
+    			input.value = '';
+    			suggestions.innerHTML = '';
+    			filterBooks();
+
+	        }
+	</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Event carousel functionality
+    const carousel = document.querySelector('.event-carousel');
+    const cards = document.querySelectorAll('.event-card');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    
+    // Configuration
+    const itemsPerView = window.innerWidth >= 768 ? 2 : 1;
+    const cardWidth = carousel.offsetWidth / itemsPerView;
+    const totalItems = cards.length;
+    const totalViews = Math.ceil(totalItems / itemsPerView);
+    
+    // Current state
+    let currentIndex = 0;
+    let autoplayInterval;
+    const autoplayDelay = 6000; // 6 seconds
+    
+    // Create indicators based on the number of views
+    for (let i = 0; i < totalViews; i++) {
+        const indicator = document.createElement('div');
+        indicator.classList.add('carousel-indicator');
+        if (i === 0) indicator.classList.add('active');
+        
+        indicator.addEventListener('click', () => {
+            goToSlide(i);
         });
-    </script>
+        
+        indicatorsContainer.appendChild(indicator);
+    }
+    
+    const indicators = document.querySelectorAll('.carousel-indicator');
+    
+    // Set up event cards
+    cards.forEach((card, index) => {
+        // Set badge based on date
+        const dateText = card.querySelector('.event-date span').textContent;
+        const eventDate = new Date(dateText);
+        const today = new Date();
+        
+        const badge = card.querySelector('.event-badge');
+        if (eventDate < today) {
+            badge.textContent = 'Selesai';
+            badge.style.backgroundColor = '#718096';
+        } else {
+            badge.textContent = 'Upcoming';
+        }
+        
+        // Add hover effect animation
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+            this.style.boxShadow = '0 15px 30px rgba(49, 130, 206, 0.25)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 10px 25px rgba(49, 130, 206, 0.1)';
+        });
+    });
+    
+    // Go to a specific slide
+    function goToSlide(index) {
+        if (index < 0) {
+            index = 0;
+        } else if (index >= totalViews) {
+            index = totalViews - 1;
+        }
+        
+        currentIndex = index;
+        const translateX = -index * (cardWidth * itemsPerView + 20); // 20 for gap
+        
+        carousel.style.transform = `translateX(${translateX}px)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === currentIndex);
+        });
+        
+        // Reset autoplay timer
+        resetAutoplay();
+    }
+    
+    // Navigate to previous slide
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+    }
+    
+    // Navigate to next slide
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+    
+    // Button event listeners
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+    
+    // Start autoplay
+    function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+            if (currentIndex >= totalViews - 1) {
+                goToSlide(0);
+            } else {
+                goToSlide(currentIndex + 1);
+            }
+        }, autoplayDelay);
+    }
+    
+    // Reset autoplay timer
+    function resetAutoplay() {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+    }
+    
+    // Initialize autoplay
+    startAutoplay();
+    
+    // Pause autoplay on hover
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoplayInterval);
+    });
+    
+    // Resume autoplay when mouse leaves
+    carousel.addEventListener('mouseleave', () => {
+        startAutoplay();
+    });
+    
+    // Handle touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(autoplayInterval);
+    }, {passive: true});
+    
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoplay();
+    }, {passive: true});
+    
+    function handleSwipe() {
+        const difference = touchStartX - touchEndX;
+        if (difference > 50) {
+            // Swipe left, go to next slide
+            nextSlide();
+        } else if (difference < -50) {
+            // Swipe right, go to previous slide
+            prevSlide();
+        }
+    }
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        // Recalculate dimensions
+        const newItemsPerView = window.innerWidth >= 768 ? 2 : 1;
+        
+        // Only update if the items per view changes
+        if (newItemsPerView !== itemsPerView) {
+            location.reload(); // Simple solution to handle responsive change
+        }
+    });
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
+});
+</script>
+
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
