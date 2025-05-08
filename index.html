@@ -88,32 +88,8 @@
       text-decoration: underline;
     }
 
-    .carousel {
-      margin: 20px 0;
-      overflow-x: auto;
-      display: flex;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      gap: 10px;
-    }
-
-    .carousel::-webkit-scrollbar {
-      display: none;
-    }
-
-    .carousel-item {
-      flex: none;
-      width: 100%;
-      max-width: 1000px;
-      height: 300px;
-      scroll-snap-align: center;
-      border-radius: 10px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .book-section, .event-section {
+    .book-section,
+    .event-section {
       margin-top: 20px;
       padding: 20px;
       background: white;
@@ -121,19 +97,22 @@
       box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
     }
 
-    .book-section h2, .event-section h2 {
+    .book-section h2,
+    .event-section h2 {
       text-align: center;
       color: #4B3619;
     }
 
-    .book-container, .event-container {
+    .book-container,
+    .event-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
 
-    .book-card, .event-card {
+    .book-card,
+    .event-card {
       background: #fdfdfd;
       padding: 15px;
       border-radius: 8px;
@@ -142,18 +121,22 @@
       width: 220px;
     }
 
-    .book-card img, .event-card img {
+    .book-card img,
+    .event-card img {
       width: 100%;
-      height: 300px;
-      object-fit: cover;
       border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .book-card img {
+      height: 300px;
     }
 
     .event-card img {
       height: 200px;
     }
 
-    .book-title, .event-title {
+    .book-title {
       font-weight: bold;
       margin: 10px 0 5px;
     }
@@ -169,7 +152,8 @@
       color: #777;
     }
 
-    .download-btn, .event-link {
+    .download-btn,
+    .event-link {
       display: block;
       padding: 8px;
       background: #4B3619;
@@ -180,7 +164,8 @@
       margin-top: 5px;
     }
 
-    .download-btn:hover, .event-link:hover {
+    .download-btn:hover,
+    .event-link:hover {
       background: #362511;
     }
 
@@ -188,13 +173,69 @@
       background-color: #4B3619;
       height: 30px;
       border-radius: 0 0 8px 8px;
+      margin-top: 20px;
+    }
+
+    /* Carousel Styles */
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      margin-top: 30px;
+      padding: 10px 0;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-item {
+      min-width: 300px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(75, 54, 25, 0.8);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      border-radius: 50%;
+    }
+
+    .carousel-btn.left {
+      left: 10px;
+    }
+
+    .carousel-btn.right {
+      right: 10px;
+    }
+
+    .carousel-btn:hover {
+      background-color: rgba(75, 54, 25, 1);
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
       <h1>Perpustakaan Kadaffi</h1>
       <nav>
         <ul>
@@ -213,14 +254,6 @@
     </header>
 
     <main>
-      <!-- Carousel Swipeable -->
-      <div class="carousel">
-        <div class="carousel-item" style="background-image: url('https://i.imgur.com/7pDtl9S.jpeg');"></div>
-        <div class="carousel-item" style="background-image: url('https://i.imgur.com/9XhcD1B.jpeg');"></div>
-        <div class="carousel-item" style="background-image: url('https://i.imgur.com/AeSg9va.jpeg');"></div>
-        <div class="carousel-item" style="background-image: url('https://i.imgur.com/uGljZYU.jpeg');"></div>
-      </div>
-
       <h2>Hallo! Selamat Datang di Perpustakaan Kadaffi</h2>
       <p>Website ini menyediakan katalog buku terbaik untuk meningkatkan wawasan dan pengetahuan Anda.</p>
 
@@ -233,6 +266,18 @@
         <h2>Event Perpustakaan</h2>
         <div class="event-container" id="event-list"></div>
       </section>
+
+      <!-- Carousel Section -->
+      <div class="carousel-wrapper">
+        <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+        <div class="carousel" id="carousel">
+          <div class="carousel-item" style="background-image: url('https://i.imgur.com/7pDtl9S.jpeg');"></div>
+          <div class="carousel-item" style="background-image: url('https://i.imgur.com/9XhcD1B.jpeg');"></div>
+          <div class="carousel-item" style="background-image: url('https://i.imgur.com/AeSg9va.jpeg');"></div>
+          <div class="carousel-item" style="background-image: url('https://i.imgur.com/uGljZYU.jpeg');"></div>
+        </div>
+        <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
+      </div>
     </main>
 
     <footer></footer>
@@ -307,7 +352,6 @@
       books.forEach(book => {
         const bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
-
         bookCard.innerHTML = `
           <img src="${book.cover}" alt="${book.title}">
           <h3 class="book-title">${book.title}</h3>
@@ -315,23 +359,26 @@
           <p class="book-description">${book.description}</p>
           <a href="${book.file}" target="_blank" class="download-btn">Baca Disini</a>
         `;
-
         bookList.appendChild(bookCard);
       });
 
       events.forEach(event => {
         const eventCard = document.createElement("div");
         eventCard.classList.add("event-card");
-
         eventCard.innerHTML = `
           <img src="${event.image}" alt="${event.title}">
           <p class="event-title">${event.title}</p>
           <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
         `;
-
         eventList.appendChild(eventCard);
       });
     });
+
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('carousel');
+      const scrollAmount = carousel.offsetWidth * 0.9;
+      carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
   </script>
 </body>
 </html>
