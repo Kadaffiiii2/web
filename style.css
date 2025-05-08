@@ -5,35 +5,6 @@ nav {
     text-align: center;
     border-radius: 8px;
     margin-bottom: 20px;
-    position: relative;
-}
-
-/* Pencarian */
-.search-container {
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-}
-
-.search-container input[type="text"] {
-    padding: 8px;
-    width: 200px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-}
-
-.search-container button {
-    padding: 8px 12px;
-    background-color: #4B3619;
-    color: white;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
-
-.search-container button:hover {
-    background-color: #362511;
 }
 
 nav ul {
@@ -92,52 +63,4 @@ nav ul li ul li a {
 nav ul li ul li a:hover {
     background-color: #c39d7a;
     border-radius: 0;
-}
-
-/* Form Login */
-.login-section {
-    margin: 30px auto;
-    padding: 20px;
-    max-width: 400px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
-}
-
-.login-section h2 {
-    text-align: center;
-    color: #4B3619;
-    margin-bottom: 15px;
-}
-
-.login-section form {
-    display: flex;
-    flex-direction: column;
-}
-
-.login-section label {
-    margin: 10px 0 5px;
-    color: #333;
-}
-
-.login-section input[type="text"],
-.login-section input[type="password"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.login-section button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #4B3619;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-section button:hover {
-    background-color: #362511;
 }
