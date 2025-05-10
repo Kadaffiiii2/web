@@ -1,183 +1,47 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Perpustakaan Kadaffi</title>
-
-  <!-- Import Font Poppins dari Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #F5F5DC;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .container {
-      width: 80%;
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #FFF;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      border: 1px solid #D2B48C;
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #4B3619;
-      font-weight: 600;
-    }
-
-    .description {
-      text-align: justify;
-      color: #333;
-      font-weight: 300;
-    }
-
-    #biodata-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    #biodata-table th {
-      background-color: #8B5A2B;
-      color: white;
-      padding: 10px;
-      text-align: left;
-      font-weight: 600;
-    }
-
-    #biodata-table td {
-      background-color: #D2B48C;
-      padding: 10px;
-      color: black;
-      border: 1px solid #8B5A2B;
-      font-weight: 400;
-    }
-
-    header {
-      background-color: #4B3619;
-      color: white;
-      padding: 20px 10px;
-      text-align: center;
-      border-radius: 0 0 8px 8px;
-    }
-
-    header img {
-      height: 60px;
-    }
-
-    header nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0 0;
-    }
-
-    header nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
-
-    header nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
-      background-color: #4B3619;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-weight: 400;
-      border-radius: 8px 8px 0 0;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Perpustakaan Kadaffi</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Logo_USU.png/600px-Logo_USU.png" alt="Logo USU">
     <h1>Perpustakaan Kadaffi</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="media.html">Media</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
   </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h2>Tentang Kami</h2>
+    <p>Perpustakaan Kadaffi adalah pusat informasi dan pengetahuan bagi mahasiswa dan masyarakat umum, menyediakan berbagai koleksi buku dan media digital.</p>
 
-  <main>
-    <div class="container">
-      <h1>Tentang Kami</h1>
-      <p class="description">
-        Perpustakaan Kadaffi adalah perpustakaan pribadi yang berkomitmen untuk menyediakan akses luas terhadap berbagai e-book, referensi digital, dan layanan perpustakaan yang inovatif.
-      </p>
-      <p class="description">
-        Mari bergabung bersama kami dalam perjalanan menuju dunia penuh ilmu dan pengetahuan!
-      </p>
-      <h2>Sejarah Perpustakaan</h2>
-      <p class="description">
-        Perpustakaan Kadaffi didirikan pada tahun 2020 sebagai inisiatif untuk memberikan akses kepada komunitas pelajar dan peneliti terhadap berbagai sumber daya yang tidak hanya terbatas pada buku, tetapi juga materi digital lainnya. Seiring berjalannya waktu, perpustakaan ini telah berkembang untuk menawarkan berbagai layanan inovatif, termasuk koleksi musik dan cuplikan film untuk mendukung pembelajaran multimedia.
-      </p>
-      <h2>Layanan Kami</h2>
-      <p class="description">
-        Kami tidak hanya menyediakan akses buku dan referensi digital, tetapi juga berfokus pada penyediaan layanan multimedia untuk meningkatkan pengalaman belajar:
-      </p>
-      <ul class="description">
-        <li><strong>Musik</strong> - Akses berbagai koleksi musik yang dapat membantu menciptakan suasana belajar yang tenang dan fokus.</li>
-        <li><strong>Cuplikan Film</strong> - Koleksi cuplikan film yang relevan dengan berbagai topik belajar, memberikan perspektif visual untuk materi pendidikan.</li>
-      </ul>
-      <h2>Informasi Pribadi</h2>
-      <table id="biodata-table">
-        <tr>
-          <th>Nama</th>
-          <td id="nama">Kadaffi</td>
-        </tr>
-        <tr>
-          <th>NIM</th>
-          <td id="nim">220709024</td>
-        </tr>
-        <tr>
-          <th>Jurusan</th>
-          <td id="jurusan">Perpustakaan dan Sains Informasi</td>
-        </tr>
-        <tr>
-          <th>Fakultas</th>
-          <td id="fakultas">Ilmu Budaya</td>
-        </tr>
-        <tr>
-          <th>Perguruan Tinggi</th>
-          <td id="kampus">Universitas Sumatera Utara</td>
-        </tr>
-        <tr>
-          <th>Email</th>
-          <td id="email">Kadaffipiliang09@gmail.com</td>
-        </tr>
-      </table>
-    </div>
-  </main>
+    <h2>Sejarah Perpustakaan</h2>
+    <p>Didirikan pada tahun 1987, Perpustakaan Kadaffi telah berkembang menjadi salah satu perpustakaan terlengkap di wilayah Sumatera Utara.</p>
+
+    <h2>Layanan Kami</h2>
+    <ul>
+      <li>Peminjaman dan Pengembalian Buku</li>
+      <li>Akses Jurnal Elektronik</li>
+      <li>Ruang Baca dan Diskusi</li>
+      <li>Konsultasi Penelusuran Informasi</li>
+    </ul>
+
+    <h2>Informasi Pribadi</h2>
+    <p>Semua data pengguna disimpan dengan aman dan digunakan hanya untuk keperluan administrasi perpustakaan.</p>
+
+    <h2>Lokasi Perpustakaan</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.1430407896067!2d98.65516727583942!3d3.556958950477949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cefa6a9c07%3A0x4b84e9a0e41c8ec!2sUniversitas%20Sumatera%20Utara!5e0!3m2!1sen!2sid!4v1715280802077!5m2!1sen!2sid" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
   <footer>
-    &copy; 2025 Perpustakaan Kadaffi. All rights reserved.
+    2025 Perpustakaan Kadaffi. All rights reserved.
   </footer>
-
 </body>
 </html>
