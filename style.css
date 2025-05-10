@@ -1,103 +1,66 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-header {
-  background-color: #114b5f;
-  color: white;
-  padding: 10px 20px;
-}
-
-.logo {
-  width: 60px;
-  vertical-align: middle;
+/* Navigasi */
+nav {
+    background-color: #8b5e3c;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background: #028090;
-  overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-  display: inline-block;
-  position: relative;
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
 }
 
 nav ul li a {
-  display: block;
-  padding: 10px 20px;
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    display: inline-block;
 }
 
-nav ul li:hover {
-  background: #05668d;
+nav ul li:hover > a {
+    background-color: #c39d7a;
+    border-radius: 5px;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #028090;
-  min-width: 180px;
-  z-index: 1;
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #8b5e3c;
+    border-radius: 5px;
+    padding: 10px 0;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 150px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content li {
-  display: block;
-}
-
-.section-whitebrown {
-  background: #f0e3d0;
-  padding: 20px;
-}
-
-.book, .event {
-  background: white;
-  border-radius: 8px;
-  margin: 15px auto;
-  padding: 15px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.book img, .event img {
-  max-width: 100%;
-  border-radius: 5px;
-}
-
-iframe {
-  margin: 10px;
-  width: 300px;
-  height: 80px;
-  border: none;
-}
-
-form input, form textarea, form select, form button {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-footer {
-  background: #114b5f;
-  color: white;
-  padding: 15px;
-  margin-top: 40px;
-}
-
-@media screen and (max-width: 768px) {
-  nav ul li {
+nav ul li:hover ul {
     display: block;
-  }
+}
+
+nav ul li ul li {
+    display: block;
+    margin: 0;
+}
+
+nav ul li ul li a {
+    padding: 8px 15px;
+    display: block;
+    color: white;
+    font-weight: normal;
+}
+
+nav ul li ul li a:hover {
+    background-color: #c39d7a;
+    border-radius: 0;
 }
