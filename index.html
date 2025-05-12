@@ -88,6 +88,10 @@
             text-decoration: underline;
         }
 
+        main {
+            padding: 20px;
+        }
+
         .book-section {
             margin-top: 20px;
             padding: 20px;
@@ -214,8 +218,19 @@
 
         footer {
             background-color: #4B3619;
-            height: 30px;
+            height: auto;
             border-radius: 0 0 8px 8px;
+            margin-top: 20px;
+        }
+
+        footer div {
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a img {
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -229,7 +244,7 @@
                     <li><a href="index.html">Homepage</a></li>
                     <li><a href="about.html">About</a></li>
                     <li>
-                        <a href="Media.html">Media</a>
+                        <a href="media.html">Media</a>
                         <ul>
                             <li><a href="audio.html">Audio</a></li>
                             <li><a href="video.html">Video</a></li>
@@ -255,6 +270,23 @@
             </section>
         </main>
 
+        <footer>
+            <div>
+                <p>&copy; 2025 Perpustakaan Kadaffi. Seluruh hak cipta dilindungi.</p>
+                <p>Jl. Universitas No. 1, Medan, Sumatera Utara | Email: info@perpuskadaffi.ac.id</p>
+                <div style="margin-top: 10px;">
+                    <a href="https://www.instagram.com/kadaffi_pili?igsh=MW43YXg4eW03OWhpeg==" target="_blank" style="margin: 0 10px;">
+                        <img src="https://cdn-icons-png.flaticon.com/24/1384/1384063.png" alt="Instagram" title="Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/@Kadaffi09" target="_blank" style="margin: 0 10px;">
+                        <img src="https://cdn-icons-png.flaticon.com/24/1384/1384060.png" alt="YouTube" title="YouTube">
+                    </a>
+                    <a href="https://www.linkedin.com/in/kadaffi-d-12187a364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px;">
+                        <img src="https://cdn-icons-png.flaticon.com/24/1384/1384014.png" alt="LinkedIn" title="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script>
@@ -361,26 +393,6 @@
                 eventList.appendChild(eventCard);
             });
         });
-
     </script>
-    <footer>
-    <div style="color: white; text-align: center; padding: 10px;">
-        <p>&copy; 2025 Perpustakaan Kadaffi. Seluruh hak cipta dilindungi.</p>
-        <p>Jl. Universitas No. 1, Medan, Sumatera Utara | Email: info@perpuskadaffi.ac.id</p>
-        <div style="margin-top: 10px;">
-            <a href="https://www.instagram.com/kadaffi_pili?igsh=MW43YXg4eW03OWhpeg==" target="_blank" style="margin: 0 10px;">
-                <img src="https://cdn-icons-png.flaticon.com/24/1384/1384063.png" alt="Instagram" title="Instagram">
-            </a>
-            <a href="https://www.youtube.com/@Kadaffi09" target="_blank" style="margin: 0 10px;">
-                <img src="https://cdn-icons-png.flaticon.com/24/1384/1384060.png" alt="YouTube" title="YouTube">
-            </a>
-            <a href="https://www.linkedin.com/in/kadaffi-d-12187a364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px;">
-                <img src="https://cdn-icons-png.flaticon.com/24/1384/1384014.png" alt="LinkedIn" title="LinkedIn">
-">
-            </a>
-            
-        </div>
-    </div>
-</footer>
 </body>
 </html>
