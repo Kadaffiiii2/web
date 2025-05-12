@@ -1,1 +1,427 @@
-AAAAAAAAA
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Kadaffi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #E2CEB1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: #E2CEB1;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        header {
+            background-color: #4B3619;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            margin: 10px 0 0 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4B3619;
+            padding: 10px 0;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            min-width: 150px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+            margin: 0;
+            padding: 5px 20px;
+        }
+
+        nav ul li ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        nav ul li ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .book-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .book-card {
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 220px;
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .book-title {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .book-author {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .book-description {
+            font-size: 12px;
+            margin: 5px 0 10px;
+            color: #777;
+        }
+
+        .download-btn {
+            display: block;
+            padding: 8px;
+            background: #4B3619;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .download-btn:hover {
+            background: #362511;
+        }
+
+        .event-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .event-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .event-card {
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 220px;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .event-title {
+            margin: 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .event-link {
+            display: block;
+            padding: 8px;
+            background: #4B3619;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .event-link:hover {
+            background: #362511;
+        }
+
+        footer {
+            background-color: #4B3619;
+            height: auto;
+            border-radius: 0 0 8px 8px;
+            margin-top: 20px;
+        }
+
+        footer div {
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+            <h1>Perpustakaan Kadaffi</h1>
+         <nav>
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="Media.html">Media</a>
+            <ul>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+            </ul>
+        </li>
+
+        <li><a href="Tautan.html">Kerjasama</a>
+            <ul>
+                <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
+                <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Formulir</a>
+            <ul>
+                <li><a href="formanggota.html">Formulir Anggota</a></li>
+                <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
+            </ul>
+        </li>
+
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+        <li><a href="LatihanPHP.html">PHP</a></li>
+    </ul>
+</nav>
+</header>
+        <title>Formulir Keanggotaan</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+    
+            h2 {
+                color: #333;
+            }
+    
+            form {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                max-width: 400px;
+                margin: auto;
+            }
+    
+            div {
+                margin-bottom: 15px;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+    
+            input[type="text"],
+            input[type="date"],
+            input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+    
+            input[type="submit"] {
+                background-color: #007BFF;
+                color: #fff;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+    
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+    
+        </style>
+    </head>
+    <body>
+        <h2>Formulir Keanggotaan</h2>
+        
+        <form action="proses_perpanjangan.php" method="post">
+            <div>
+                <label for="kode_buku">Nama:</label>
+                <input type="text" id="kode_buku" name="kode_buku" required>
+            </div>
+            
+            <div>
+                <label for="nama_peminjam">NIM:</label>
+                <input type="text" id="nama_peminjam" name="nama_peminjam" required>
+            </div>
+            
+            <div>
+                <label for="tanggal_pinjam">Tanggal Lahir:</label>
+                <input type="date" id="tanggal_pinjam" name="tanggal_pinjam" required>
+            </div>
+    
+            <div>
+                <label for="tanggal_kembali">Tempat Lahir:</label>
+                <input type="text" id="tanggal_kembali" name="tanggal_kembali" required>
+            </div>
+
+            <div>
+                <label for="nama_peminjam">Jenis Kelamin:</label>
+                <input type="text" id="nama_peminjam" name="nama_peminjam" required>
+            </div>
+            
+            <div>
+                <label for="tanggal_pinjam">Alamat:</label>
+                <input type="text" id="tanggal_pinjam" name="tanggal_pinjam" required>
+            </div>
+            <div>
+                <label for="nama_peminjam">Nomor Ponsel:</label>
+                <input type="text" id="nama_peminjam" name="nama_peminjam" required>
+            </div>
+            
+            <div>
+                <label for="tanggal_pinjam">Email:</label>
+                <input type="date" id="tanggal_pinjam" name="tanggal_pinjam" required>
+            </div>
+
+            <div>
+                <input type="submit" value="Submit" name="perpanjang">
+            </div>
+        </form>
+    </body>
+    </html>
+    <br><br>
+    <h2>Format Perpanjangan Peminjaman Buku</h2>
+    <br><br>
+    <form action="proses_perpanjangan.php" method="post">
+        <div>
+            <label for="kode_buku">Kode Buku:</label>
+            <input type="text" id="kode_buku" name="kode_buku" required>
+        </div>
+        
+        <div>
+            <label for="nama_peminjam">Nama Peminjam:</label>
+            <input type="text" id="nama_peminjam" name="nama_peminjam" required>
+        </div>
+        
+        <div>
+            <label for="tanggal_pinjam">Tanggal Pinjam:</label>
+            <input type="date" id="tanggal_pinjam" name="tanggal_pinjam" required>
+        </div>
+
+        <div>
+            <label for="tanggal_kembali">Tanggal Kembali:</label>
+            <input type="date" id="tanggal_kembali" name="tanggal_kembali" required>
+        </div>
+
+        <div>
+            <input type="submit" value="Perpanjang" name="perpanjang">
+        </div>
+    </form>
+</body>
+</html>
+<html>
+<h3> Silakan Masuk</h3>
+<form>
+    <label for="fname">Nama:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">ID Anggota:</label><br>
+    <input type="text" id="lname" name="lname">
+    <input type="submit" value="Submit">
+  </form>
+  </html>
+<style>
+    body { 
+        background-image: url("../Multimedia/paper4.jpg");
+        min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+    }
+      </style>
