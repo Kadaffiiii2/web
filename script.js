@@ -60,3 +60,12 @@ document.getElementById("loginForm")?.addEventListener("submit", function (event
         loginMsg.style.color = "red";
     }
 });
+
+// Dropdown Sidebar dengan Klik
+document.querySelectorAll('.dropdown-toggle')?.forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault(); // Mencegah aksi default link
+        const parent = this.parentElement;
+        parent.classList.toggle('active'); // Tambah/hapus class active
+    });
+});
