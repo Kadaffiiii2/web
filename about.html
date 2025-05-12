@@ -3,99 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Perpustakaan Kadaffi</title>
-
-    <!-- Import Font Poppins dari Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <title>Perpustakaan Kadaffi</title>
     <style>
-        /* Styling umum */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F5F5DC;
+            background-color: #E2CEB1;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
         }
 
         .container {
-            width: 90%; /* Perubahan ukuran container */
-            max-width: 1200px; /* Tambahan batas lebar maksimal */
-            margin: auto;
+            width: 80%;
+            max-width: 1000px;
+            background-color: #E2CEB1;
             padding: 20px;
-            background-color: #FFF;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
             border-radius: 8px;
         }
 
-        h1, h2 {
-            text-align: center;
-            color: #4B3619;
-            font-weight: 600;
-        }
-
-        .description {
-            text-align: justify;
-            color: #333;
-            font-weight: 300;
-        }
-
-        /* Styling tabel */
-        #biodata-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        #biodata-table th {
-            background-color: #8B5A2B; /* Warna coklat gelap */
-            color: white;
-            padding: 10px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        #biodata-table td {
-            background-color: #D2B48C; /* Warna coklat terang */
-            padding: 10px;
-            color: black;
-            border: 1px solid #8B5A2B;
-            font-weight: 400;
-        }
-
-        /* Styling header */
         header {
             background-color: #4B3619;
             color: white;
-            padding: 20px 10px;
             text-align: center;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
         }
 
         header img {
-            height: 50px;
-            vertical-align: middle;
+            height: 60px;
         }
 
-        header h1 {
-            display: inline-block;
-            margin-left: 10px;
-        }
-
-        header nav ul {
-            list-style: none;
+        nav ul {
             padding: 0;
-            text-align: center;
+            list-style: none;
+            margin: 10px 0 0 0;
         }
 
-        header nav ul li {
-            display: inline;
-            margin: 0 10px;
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+            position: relative;
         }
 
-        header nav ul li a {
+        nav ul li a {
             color: white;
             text-decoration: none;
-            font-weight: 400;
+            font-weight: bold;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4B3619;
+            padding: 10px 0;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            min-width: 150px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+            margin: 0;
+            padding: 5px 20px;
+        }
+
+        nav ul li ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        nav ul li ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
         }
 
         /* Styling footer */
