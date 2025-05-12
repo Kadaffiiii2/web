@@ -25,6 +25,7 @@ nav ul li a {
     font-weight: bold;
     padding: 8px 12px;
     display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li:hover > a {
@@ -32,20 +33,41 @@ nav ul li:hover > a {
     border-radius: 5px;
 }
 
+/* Panah ▼ */
+nav ul li a .arrow {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Panah berputar saat hover */
+nav ul li:hover > a .arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menu */
 nav ul li ul {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
     position: absolute;
     background-color: #8b5e3c;
     border-radius: 5px;
-    padding: 10px 0;
+    padding: 0;
     top: 100%;
     left: 0;
     z-index: 1000;
     min-width: 150px;
+    transition: all 0.3s ease;
 }
 
+/* Tampilkan dropdown dengan transisi */
 nav ul li:hover ul {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px; /* cukup untuk konten */
+    padding: 10px 0;
 }
 
 nav ul li ul li {
@@ -58,6 +80,7 @@ nav ul li ul li a {
     display: block;
     color: white;
     font-weight: normal;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li ul li a:hover {
