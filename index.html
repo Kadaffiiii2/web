@@ -35,6 +35,7 @@
             text-decoration: none;
             display: block;
             font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
         .sidebar a:hover {
@@ -44,6 +45,7 @@
         .sidebar ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .sidebar ul li {
@@ -61,10 +63,15 @@
             width: 100%;
             left: 0;
             top: 0;
+            margin-top: 0;  /* Make sure the dropdown starts directly below the parent item */
         }
 
         .sidebar ul li:hover ul {
             display: block;
+        }
+
+        .sidebar ul li ul li {
+            padding-left: 40px;
         }
 
         /* Main content styling */
@@ -356,22 +363,7 @@
                 {
                     title: "Seminar: Image Management: Membangun Perpektif dan Kesadaran Mahasiswa terhadap Publik Speaking",
                     image: "https://i.imgur.com/k8nprtg.jpeg",
-                    link: "https://www.instagram.com/p/DIVXzMKxhe3/?igsh=MW4xbDdiYmF3dXRlMQ=="
-                },
-                {
-                    title: "Seminar: Sukses Dimulai dari Pikiran yang Sehat",
-                    image: "https://i.imgur.com/SzT51fn.jpeg",
-                    link: "https://www.instagram.com/p/DIVXzMKxhe3/?igsh=MW4xbDdiYmF3dXRlMQ=="
-                },
-                {
-                    title: "Lomba Eco Accounting: Business Model Canvas",
-                    image: "https://i.imgur.com/9XhcD1B.jpeg",
-                    link: "https://www.instagram.com/p/DHSfJVspH0K/?igsh=bWE0Z2hibm9jbmpz"
-                },
-                {
-                    title: "Lomba Esay Nasional",
-                    image: "https://i.imgur.com/AeSg9va.jpeg",
-                    link: "https://www.instagram.com/p/DHj8wJDzdr4/?igsh=bThlamxuajZ2dHo5"
+                    link: "https://www.instagram.com/p/DIVXzMKxhe3/?igsh=MW4xbDdiYmF3dXR9"
                 },
                 {
                     title: "Acara Pemilihan Mahasiswa Berprestasi",
