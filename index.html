@@ -233,6 +233,35 @@
         footer a img {
             vertical-align: middle;
         }
+
+        .search-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4B3619;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .search-button:hover {
+            background-color: #362511;
+        }
     </style>
 </head>
 <body>
@@ -240,42 +269,46 @@
         <header>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
             <h1>Perpustakaan Kadaffi</h1>
-         <nav>
-    <ul>
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="about.html">About</a></li>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="about.html">About</a></li>
 
-        <li><a href="Media.html">Media</a>
-            <ul>
-                <li><a href="audio.html">Audio</a></li>
-                <li><a href="video.html">Video</a></li>
-            </ul>
-        </li>
+                    <li><a href="Media.html">Media</a>
+                        <ul>
+                            <li><a href="audio.html">Audio</a></li>
+                            <li><a href="video.html">Video</a></li>
+                        </ul>
+                    </li>
 
-        <li><a href="Tautan.html">Kerjasama</a>
-            <ul>
-                <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
-                <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
-            </ul>
-        </li>
+                    <li><a href="Tautan.html">Kerjasama</a>
+                        <ul>
+                            <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
+                            <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
+                        </ul>
+                    </li>
 
-        <li><a href="#">Formulir</a>
-            <ul>
-                <li><a href="formanggota.html">Formulir Anggota</a></li>
-                <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
-            </ul>
-        </li>
+                    <li><a href="#">Formulir</a>
+                        <ul>
+                            <li><a href="formanggota.html">Formulir Anggota</a></li>
+                            <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
+                        </ul>
+                    </li>
 
-        <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-        <li><a href="LatihanPHP.html">PHP</a></li>
-    </ul>
-</nav>
-</header>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <main>
             <h2>Hallo! Selamat Datang di Perpustakaan Kadaffi</h2>
             <p>Website ini menyediakan katalog buku terbaik untuk meningkatkan wawasan dan pengetahuan Anda.</p>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="Cari buku...">
+                <button class="search-button" onclick="searchBooks()">Cari</button>
+            </div>
 
             <section class="book-section">
                 <h2>Book Recommendations</h2>
@@ -356,60 +389,64 @@
                 {
                     title: "Seminar: Image Management: Membangun Perpektif dan Kesadaran Mahasiswa terhadap Publik Speaking",
                     image: "https://i.imgur.com/k8nprtg.jpeg",
-                    link: "https://www.instagram.com/p/DIVXzMKxhe3/?igsh=MW4xbDdiYmF3dXRlMQ=="
-                },
-                {
-                    title: "Seminar: Sukses Dimulai dari Pikiran yang Sehat",
-                    image: "https://i.imgur.com/SzT51fn.jpeg",
-                    link: "https://www.instagram.com/p/DIVXzMKxhe3/?igsh=MW4xbDdiYmF3dXRlMQ=="
-                },
-                {
-                    title: "Lomba Eco Accounting: Business Model Canvas",
-                    image: "https://i.imgur.com/9XhcD1B.jpeg",
-                    link: "https://www.instagram.com/p/DHSfJVspH0K/?igsh=bWE0Z2hibm9jbmpz"
-                },
-                {
-                    title: "Lomba Esay Nasional",
-                    image: "https://i.imgur.com/AeSg9va.jpeg",
-                    link: "https://www.instagram.com/p/DHj8wJDzdr4/?igsh=bThlamxuajZ2dHo5"
-                },
-                {
-                    title: "Lomba Video Kreatif Akuntansi",
-                    image: "https://i.imgur.com/uGljZYU.jpeg",
-                    link: "https://www.instagram.com/p/DIL8op8TGpx/?igsh=Yjh4aHBhaDI4aGwx"
+                    link: "https://www.instagram.com/p/DIVXzMKxhe/?igsh=OXYJ8LZKffQI1m1M"
                 }
             ];
 
-            const bookList = document.getElementById("book-list");
-            const eventList = document.getElementById("event-list");
+            function displayBooks() {
+                const bookList = document.getElementById('book-list');
+                books.forEach(book => {
+                    const bookCard = document.createElement('div');
+                    bookCard.classList.add('book-card');
+                    bookCard.innerHTML = `
+                        <img src="${book.cover}" alt="${book.title}">
+                        <div class="book-title">${book.title}</div>
+                        <div class="book-author">by ${book.author}</div>
+                        <div class="book-description">${book.description}</div>
+                        <a href="${book.file}" class="download-btn" target="_blank">Download</a>
+                    `;
+                    bookList.appendChild(bookCard);
+                });
+            }
 
-            books.forEach(book => {
-                const bookCard = document.createElement("div");
-                bookCard.classList.add("book-card");
+            function displayEvents() {
+                const eventList = document.getElementById('event-list');
+                events.forEach(event => {
+                    const eventCard = document.createElement('div');
+                    eventCard.classList.add('event-card');
+                    eventCard.innerHTML = `
+                        <img src="${event.image}" alt="${event.title}">
+                        <div class="event-title">${event.title}</div>
+                        <a href="${event.link}" class="event-link" target="_blank">Link Event</a>
+                    `;
+                    eventList.appendChild(eventCard);
+                });
+            }
 
-                bookCard.innerHTML = `
-                    <img src="${book.cover}" alt="${book.title}">
-                    <h3 class="book-title">${book.title}</h3>
-                    <p class="book-author">by ${book.author}</p>
-                    <p class="book-description">${book.description}</p>
-                    <a href="${book.file}" target="_blank" class="download-btn">Baca Disini</a>
-                `;
+            function searchBooks() {
+                const query = document.getElementById('search-input').value.toLowerCase();
+                const filteredBooks = books.filter(book =>
+                    book.title.toLowerCase().includes(query) || 
+                    book.author.toLowerCase().includes(query)
+                );
+                const bookList = document.getElementById('book-list');
+                bookList.innerHTML = '';
+                filteredBooks.forEach(book => {
+                    const bookCard = document.createElement('div');
+                    bookCard.classList.add('book-card');
+                    bookCard.innerHTML = `
+                        <img src="${book.cover}" alt="${book.title}">
+                        <div class="book-title">${book.title}</div>
+                        <div class="book-author">by ${book.author}</div>
+                        <div class="book-description">${book.description}</div>
+                        <a href="${book.file}" class="download-btn" target="_blank">Download</a>
+                    `;
+                    bookList.appendChild(bookCard);
+                });
+            }
 
-                bookList.appendChild(bookCard);
-            });
-
-            events.forEach(event => {
-                const eventCard = document.createElement("div");
-                eventCard.classList.add("event-card");
-
-                eventCard.innerHTML = `
-                    <img src="${event.image}" alt="${event.title}">
-                    <p class="event-title">${event.title}</p>
-                    <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
-                `;
-
-                eventList.appendChild(eventCard);
-            });
+            displayBooks();
+            displayEvents();
         });
     </script>
 </body>
