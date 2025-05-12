@@ -13,76 +13,86 @@
             margin: 0;
             padding: 0;
             display: flex;
-        }
-
-        .sidebar {
-            width: 250px;
-            background-color: #4B3619;
-            color: white;
-            height: 100vh;
-            padding: 20px 10px;
-            position: fixed;
-            overflow-y: auto;
-        }
-
-        .sidebar img {
-            height: 60px;
-            display: block;
-            margin: 0 auto 10px;
-        }
-
-        .sidebar h1 {
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-
-        .sidebar ul li {
-            margin-bottom: 10px;
-            position: relative;
-        }
-
-        .sidebar ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            display: block;
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
-
-        .sidebar ul li a:hover {
-            background-color: #362511;
-        }
-
-        .sidebar ul li ul {
-            display: none;
-            padding-left: 15px;
-            background-color: #3A2914;
-            border-radius: 5px;
-        }
-
-        .sidebar ul li:hover ul {
-            display: block;
+            justify-content: center;
         }
 
         .container {
-            margin-left: 270px;
-            width: calc(100% - 270px);
+            width: 80%;
+            max-width: 1000px;
+            background-color: #E2CEB1;
             padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        header {
+            background-color: #4B3619;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            margin: 10px 0 0 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4B3619;
+            padding: 10px 0;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            min-width: 150px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+            margin: 0;
+            padding: 5px 20px;
+        }
+
+        nav ul li ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        nav ul li ul li a:hover {
+            text-decoration: underline;
         }
 
         main {
             padding: 20px;
-            background-color: #E2CEB1;
         }
 
-        .book-section, .event-section {
+        .book-section {
             margin-top: 20px;
             padding: 20px;
             background: white;
@@ -90,14 +100,19 @@
             box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
         }
 
-        .book-container, .event-container {
+        .book-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .book-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
 
-        .book-card, .event-card {
+        .book-card {
             background: #fdfdfd;
             padding: 15px;
             border-radius: 8px;
@@ -106,14 +121,14 @@
             width: 220px;
         }
 
-        .book-card img, .event-card img {
+        .book-card img {
             width: 100%;
-            height: auto;
+            height: 300px;
             object-fit: cover;
             border-radius: 8px;
         }
 
-        .book-title, .event-title {
+        .book-title {
             font-weight: bold;
             margin: 10px 0 5px;
         }
@@ -125,10 +140,11 @@
 
         .book-description {
             font-size: 12px;
+            margin: 5px 0 10px;
             color: #777;
         }
 
-        .download-btn, .event-link {
+        .download-btn {
             display: block;
             padding: 8px;
             background: #4B3619;
@@ -139,17 +155,78 @@
             margin-top: 5px;
         }
 
-        .download-btn:hover, .event-link:hover {
+        .download-btn:hover {
+            background: #362511;
+        }
+
+        .event-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .event-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .event-card {
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 220px;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .event-title {
+            margin: 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .event-link {
+            display: block;
+            padding: 8px;
+            background: #4B3619;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .event-link:hover {
             background: #362511;
         }
 
         footer {
             background-color: #4B3619;
+            height: auto;
+            border-radius: 0 0 8px 8px;
+            margin-top: 20px;
+        }
+
+        footer div {
             color: white;
             text-align: center;
             padding: 10px;
-            border-radius: 0 0 8px 8px;
-            margin-top: 20px;
         }
 
         footer a img {
@@ -158,40 +235,43 @@
     </style>
 </head>
 <body>
-
-    <nav class="sidebar">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
-        <h1>Perpustakaan Kadaffi</h1>
-        <ul>
-            <li><a href="index.html">Homepage</a></li>
-            <li><a href="about.html">About</a></li>
-            <li>
-                <a href="Media.html">Media</a>
-                <ul>
-                    <li><a href="audio.html">Audio</a></li>
-                    <li><a href="video.html">Video</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="Tautan.html">Kerjasama</a>
-                <ul>
-                    <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
-                    <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Formulir</a>
-                <ul>
-                    <li><a href="formanggota.html">Formulir Anggota</a></li>
-                    <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="LatihanPHP.html">PHP</a></li>
-        </ul>
-    </nav>
-
     <div class="container">
+        <header>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+            <h1>Perpustakaan Kadaffi</h1>
+         <nav>
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="Media.html">Media</a>
+            <ul>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+            </ul>
+        </li>
+
+        <li><a href="Tautan.html">Kerjasama</a>
+            <ul>
+                <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
+                <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Formulir</a>
+            <ul>
+                <li><a href="formanggota.html">Formulir Anggota</a></li>
+                <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
+            </ul>
+        </li>
+
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+        <li><a href="LatihanPHP.html">PHP</a></li>
+    </ul>
+</nav>
+</header>
+
         <main>
             <h2>Hallo! Selamat Datang di Perpustakaan Kadaffi</h2>
             <p>Website ini menyediakan katalog buku terbaik untuk meningkatkan wawasan dan pengetahuan Anda.</p>
@@ -227,8 +307,109 @@
     </div>
 
     <script>
-        // JavaScript untuk mengisi data buku dan event (sama persis dengan yang Anda kirim, tetap digunakan)
-    </script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const books = [
+                {
+                    title: "The Subtle Art of Not Giving a F*ck",
+                    author: "Mark Manson",
+                    description: "Pendekatan hidup dengan menerima keterbatasan dan ketidaksempurnaan.",
+                    cover: "https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg",
+                    file: "https://drive.google.com/file/d/1MmDJxq5Ai79g2K8Hg-YwuVOvKP4qb8mT/view?usp=drivesdk"
+                },
+                {
+                    title: "Rich Dad Poor Dad",
+                    author: "Robert Kiyosaki",
+                    description: "Pelajaran keuangan dari dua figur ayah yang berbeda.",
+                    cover: "https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg",
+                    file: "https://drive.google.com/file/d/1MkWfM-S075XMs_tHclD340QiJN_210NL/view?usp=sharing"
+                },
+                {
+                    title: "Think and Grow Rich",
+                    author: "Napoleon Hill",
+                    description: "Formula sukses berdasarkan pola pikir dan kebiasaan.",
+                    cover: "https://m.media-amazon.com/images/I/71UypkUjStL.jpg",
+                    file: "https://drive.google.com/file/d/1MkdhNi-LzfK5pBekQ4PxRQFwYD8k7Bc1/view?usp=sharing"
+                },
+                {   
+                    title: "Atomic Habits", 
+                    author: "James Clear", 
+                    description: "Membangun kebiasaan baik dari hal-hal kecil.", 
+                    cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
+                    file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
+                },
+                { 
+                    title: "Sapiens", 
+                    author: "Yuval Noah Harari", 
+                    description: "Sejarah singkat manusia dari awal peradaban.", 
+                    cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
+                    file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
+                }
+            ];
 
+            const events = [
+                {
+                    title: "Lomba Karya Tulis Ilmiah & Poster",
+                    image: "https://i.imgur.com/7pDtl9S.jpeg",
+                    link: "https://www.instagram.com/p/DH5v_rsTEV6/?igsh=ajJtdzdwYWQydzUx"
+                },
+                {
+                    title: "Seminar: Image Management: Membangun Perpektif dan Kesadaran Mahasiswa terhadap Publik Speaking",
+                    image: "https://i.imgur.com/k8nprtg.jpeg",
+                    link: "https://www.instagram.com/p/DIVXzMKxhe3/?igsh=MW4xbDdiYmF3dXRlMQ=="
+                },
+                {
+                    title: "Seminar: Sukses Dimulai dari Pikiran yang Sehat",
+                    image: "https://i.imgur.com/SzT51fn.jpeg",
+                    link: "https://www.instagram.com/p/DIVXzMKxhe3/?igsh=MW4xbDdiYmF3dXRlMQ=="
+                },
+                {
+                    title: "Lomba Eco Accounting: Business Model Canvas",
+                    image: "https://i.imgur.com/9XhcD1B.jpeg",
+                    link: "https://www.instagram.com/p/DHSfJVspH0K/?igsh=bWE0Z2hibm9jbmpz"
+                },
+                {
+                    title: "Lomba Esay Nasional",
+                    image: "https://i.imgur.com/AeSg9va.jpeg",
+                    link: "https://www.instagram.com/p/DHj8wJDzdr4/?igsh=bThlamxuajZ2dHo5"
+                },
+                {
+                    title: "Lomba Video Kreatif Akuntansi",
+                    image: "https://i.imgur.com/uGljZYU.jpeg",
+                    link: "https://www.instagram.com/p/DIL8op8TGpx/?igsh=Yjh4aHBhaDI4aGwx"
+                }
+            ];
+
+            const bookList = document.getElementById("book-list");
+            const eventList = document.getElementById("event-list");
+
+            books.forEach(book => {
+                const bookCard = document.createElement("div");
+                bookCard.classList.add("book-card");
+
+                bookCard.innerHTML = `
+                    <img src="${book.cover}" alt="${book.title}">
+                    <h3 class="book-title">${book.title}</h3>
+                    <p class="book-author">by ${book.author}</p>
+                    <p class="book-description">${book.description}</p>
+                    <a href="${book.file}" target="_blank" class="download-btn">Baca Disini</a>
+                `;
+
+                bookList.appendChild(bookCard);
+            });
+
+            events.forEach(event => {
+                const eventCard = document.createElement("div");
+                eventCard.classList.add("event-card");
+
+                eventCard.innerHTML = `
+                    <img src="${event.image}" alt="${event.title}">
+                    <p class="event-title">${event.title}</p>
+                    <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
+                `;
+
+                eventList.appendChild(eventCard);
+            });
+        });
+    </script>
 </body>
 </html>
