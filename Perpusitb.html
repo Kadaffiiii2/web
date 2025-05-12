@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan ITB</title>
 
-    <!-- Import Font Poppins dari Google Fonts -->
+    <!-- Import Font Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -14,6 +14,55 @@
             background-color: #F5F5DC;
             margin: 0;
             padding: 0;
+        }
+
+        header {
+            background-color: #362511;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        header nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4B3619;
+            padding: 10px;
+            list-style: none;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+        }
+
+        header nav ul li:hover ul {
+            display: block;
+        }
+
+        header nav ul li ul li {
+            display: block;
+            margin: 5px 0;
         }
 
         .container {
@@ -55,22 +104,71 @@
     </style>
 </head>
 <body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+        <h1>Perpustakaan Kadaffi</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Media.html">Media</a>
+                    <ul>
+                        <li><a href="audio.html">Audio</a></li>
+                        <li><a href="video.html">Video</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Kerjasama</a>
+                    <ul>
+                        <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
+                        <li><a href="Perpusitb.html">Perpustakaan ITB</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Formulir</a>
+                    <ul>
+                        <li><a href="formanggota.html">Formulir Anggota</a></li>
+                        <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="LatihanPHP.html">PHP</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
         <h1>Perpustakaan Institut Teknologi Bandung</h1>
 
-        <h2>Sejarah</h2>
+        <h2>Sejarah Singkat</h2>
         <p>
-            Perpustakaan ITB telah berkembang sejak berdirinya ITB pada tahun 1959. Sebagai pusat informasi akademik, perpustakaan ini mendukung kegiatan belajar mengajar, penelitian, dan pengabdian masyarakat. Dalam perjalanannya, perpustakaan ITB terus mengalami modernisasi dan digitalisasi untuk memenuhi kebutuhan sivitas akademika yang semakin dinamis.
+            Perpustakaan ITB berdiri seiring dengan kelahiran Institut Teknologi Bandung pada tahun 1959. Awalnya, perpustakaan ini merupakan bagian dari peninggalan Technische Hoogeschool te Bandoeng (THS), lembaga pendidikan tinggi teknik pada masa kolonial Belanda. Dalam perjalanannya, perpustakaan terus tumbuh menjadi pusat informasi ilmiah yang menyokong kegiatan akademik dan penelitian di lingkungan kampus.
         </p>
 
-        <h2>Layanan Perpustakaan ITB</h2>
+        <h2>Visi dan Misi</h2>
         <p>
-            Perpustakaan ITB menyediakan berbagai layanan seperti akses koleksi cetak dan digital, layanan referensi, peminjaman buku, layanan akses jurnal internasional, repository tugas akhir dan disertasi, serta fasilitas ruang belajar. Selain itu, tersedia juga layanan pengguna berbasis teknologi informasi, termasuk katalog online dan sistem keanggotaan daring.
+            Visi Perpustakaan ITB adalah menjadi pusat informasi akademik yang unggul, adaptif terhadap perubahan teknologi, dan berkontribusi dalam pengembangan keilmuan nasional dan global. Misinya mencakup penyediaan layanan informasi berkualitas, pelestarian pengetahuan, serta pengembangan literasi informasi kepada seluruh civitas akademika.
         </p>
 
-        <h2>Akses Website Resmi</h2>
+        <h2>Layanan dan Fasilitas</h2>
         <p>
-            Untuk informasi lebih lengkap, Anda dapat mengunjungi situs resmi Perpustakaan ITB melalui tautan berikut:<br>
+            Layanan yang tersedia mencakup:
+        </p>
+        <ul>
+            <li>Akses koleksi buku teks, jurnal, dan majalah ilmiah</li>
+            <li>Layanan peminjaman dan pengembalian otomatis</li>
+            <li>Digital library dan e-resources internasional</li>
+            <li>Repository tugas akhir, skripsi, tesis, dan disertasi</li>
+            <li>Ruang baca nyaman dan area diskusi kelompok</li>
+            <li>Layanan bibliometrik dan pelatihan penggunaan database</li>
+        </ul>
+
+        <h2>Transformasi Digital</h2>
+        <p>
+            Dalam menghadapi era digital, perpustakaan ITB telah mengembangkan layanan berbasis teknologi seperti katalog daring (OPAC), sistem keanggotaan online, serta akses ke jurnal dan e-book dari berbagai platform ilmiah global. Selain itu, tersedia juga akses remote melalui jaringan VPN kampus.
+        </p>
+
+        <h2>Kunjungi Situs Resmi</h2>
+        <p>
+            Untuk informasi lebih lengkap dan update layanan, silakan kunjungi:<br>
             <a href="https://lib.itb.ac.id/" target="_blank">https://lib.itb.ac.id/</a>
         </p>
     </div>
@@ -94,4 +192,3 @@
     </footer>
 </body>
 </html>
-
