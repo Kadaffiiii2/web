@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Kadaffi</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
@@ -32,31 +32,20 @@
             text-align: center;
             padding: 10px;
             border-radius: 8px 8px 0 0;
-            position: relative;
         }
 
         header img {
             height: 60px;
         }
 
-        header h1 {
-            margin-top: 10px;
-        }
-
-        nav {
-            margin-top: 10px;
-        }
-
         nav ul {
             padding: 0;
             list-style: none;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            margin: 10px 0 0 0;
         }
 
         nav ul li {
+            display: inline-block;
             margin: 0 15px;
             position: relative;
         }
@@ -90,55 +79,20 @@
         }
 
         nav ul li ul li a {
+            color: white;
+            text-decoration: none;
             font-weight: normal;
         }
 
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            z-index: 100;
+        nav ul li ul li a:hover {
+            text-decoration: underline;
         }
 
-        .hamburger svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
-            transition: transform 0.3s ease-in-out;
+        main {
+            padding: 20px;
         }
 
-        .hamburger.open svg {
-            transform: rotate(90deg);
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                background-color: #4B3619;
-                border-radius: 5px;
-                padding: 10px 0;
-                transition: all 0.3s ease;
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            .hamburger {
-                display: block;
-            }
-        }
-
-        .book-section, .event-section {
+        .book-section {
             margin-top: 20px;
             padding: 20px;
             background: white;
@@ -146,19 +100,19 @@
             box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
         }
 
-        .book-section h2, .event-section h2 {
+        .book-section h2 {
             text-align: center;
             color: #4B3619;
         }
 
-        .book-container, .event-container {
+        .book-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
 
-        .book-card, .event-card {
+        .book-card {
             background: #fdfdfd;
             padding: 15px;
             border-radius: 8px;
@@ -167,21 +121,14 @@
             width: 220px;
         }
 
-        .book-card img, .event-card img {
+        .book-card img {
             width: 100%;
+            height: 300px;
             object-fit: cover;
             border-radius: 8px;
         }
 
-        .book-card img {
-            height: 300px;
-        }
-
-        .event-card img {
-            height: 200px;
-        }
-
-        .book-title, .event-title {
+        .book-title {
             font-weight: bold;
             margin: 10px 0 5px;
         }
@@ -193,11 +140,11 @@
 
         .book-description {
             font-size: 12px;
+            margin: 5px 0 10px;
             color: #777;
-            margin-bottom: 10px;
         }
 
-        .download-btn, .event-link {
+        .download-btn {
             display: block;
             padding: 8px;
             background: #4B3619;
@@ -208,20 +155,81 @@
             margin-top: 5px;
         }
 
-        .download-btn:hover, .event-link:hover {
+        .download-btn:hover {
+            background: #362511;
+        }
+
+        .event-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .event-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .event-card {
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 220px;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .event-title {
+            margin: 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .event-link {
+            display: block;
+            padding: 8px;
+            background: #4B3619;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .event-link:hover {
             background: #362511;
         }
 
         footer {
             background-color: #4B3619;
-            color: white;
-            text-align: center;
-            padding: 10px;
+            height: auto;
             border-radius: 0 0 8px 8px;
             margin-top: 20px;
         }
 
-        footer img {
+        footer div {
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a img {
             vertical-align: middle;
         }
     </style>
@@ -229,15 +237,10 @@
 <body>
     <div class="container">
         <header>
-            <span class="hamburger" onclick="toggleMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M3 12h18M3 6h18M3 18h18"/>
-                </svg>
-            </span>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
             <h1>Perpustakaan Kadaffi</h1>
             <nav>
-                <ul id="nav-menu">
+                <ul>
                     <li><a href="index.html">Homepage</a></li>
                     <li><a href="about.html">About</a></li>
                     <li>
@@ -268,30 +271,25 @@
         </main>
 
         <footer>
-            <p>&copy; 2025 Perpustakaaaaaaaaaaaan Kadaffi. Seluruh hak cipta dilindungi.</p>
-            <p>Jl. Universitas No. 1, Medan, Sumatera Utara | Email: info@perpuskadaffi.ac.id</p>
-            <div style="margin-top: 10px;">
-                <a href="https://www.instagram.com/kadaffi_pili?igsh=MW43YXg4eW03OWhpeg==" target="_blank" style="margin: 0 10px;">
-                    <img src="https://cdn-icons-png.flaticon.com/24/1384/1384063.png" alt="Instagram" title="Instagram">
-                </a>
-                <a href="https://www.youtube.com/@Kadaffi09" target="_blank" style="margin: 0 10px;">
-                    <img src="https://cdn-icons-png.flaticon.com/24/1384/1384060.png" alt="YouTube" title="YouTube">
-                </a>
-                <a href="https://www.linkedin.com/in/kadaffi-d-12187a364" target="_blank" style="margin: 0 10px;">
-                    <img src="https://cdn-icons-png.flaticon.com/24/1384/1384014.png" alt="LinkedIn" title="LinkedIn">
-                </a>
+            <div>
+                <p>&copy; 2025 Perpustakaan Kadaffi. All Right Reserved.</p>
+                <p>Jl. Universitas No. 1, Medan, Sumatera Utara | Email: kadaffi@students.usu.ac.id</p>
+                <div style="margin-top: 10px;">
+                    <a href="https://www.instagram.com/kadaffi_pili?igsh=MW43YXg4eW03OWhpeg==" target="_blank" style="margin: 0 10px;">
+                        <img src="https://cdn-icons-png.flaticon.com/24/1384/1384063.png" alt="Instagram" title="Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/@Kadaffi09" target="_blank" style="margin: 0 10px;">
+                        <img src="https://cdn-icons-png.flaticon.com/24/1384/1384060.png" alt="YouTube" title="YouTube">
+                    </a>
+                    <a href="https://www.linkedin.com/in/kadaffi-d-12187a364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px;">
+                        <img src="https://cdn-icons-png.flaticon.com/24/1384/1384014.png" alt="LinkedIn" title="LinkedIn">
+                    </a>
+                </div>
             </div>
         </footer>
     </div>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById("nav-menu");
-            const hamburger = document.querySelector(".hamburger");
-            menu.classList.toggle("show");
-            hamburger.classList.toggle("open");
-        }
-
         document.addEventListener("DOMContentLoaded", function () {
             const books = [
                 {
@@ -315,19 +313,19 @@
                     cover: "https://m.media-amazon.com/images/I/71UypkUjStL.jpg",
                     file: "https://drive.google.com/file/d/1MkdhNi-LzfK5pBekQ4PxRQFwYD8k7Bc1/view?usp=sharing"
                 },
-                {
-                    title: "Atomic Habits",
-                    author: "James Clear",
-                    description: "Membangun kebiasaan baik dari hal-hal kecil.",
-                    cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg",
-                    file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing"
+                {   
+                    title: "Atomic Habits", 
+                    author: "James Clear", 
+                    description: "Membangun kebiasaan baik dari hal-hal kecil.", 
+                    cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
+                    file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
                 },
-                {
-                    title: "Sapiens",
-                    author: "Yuval Noah Harari",
-                    description: "Sejarah singkat manusia dari awal peradaban.",
-                    cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg",
-                    file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing"
+                { 
+                    title: "Sapiens", 
+                    author: "Yuval Noah Harari", 
+                    description: "Sejarah singkat manusia dari awal peradaban.", 
+                    cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
+                    file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
                 }
             ];
 
@@ -383,4 +381,18 @@
             });
 
             events.forEach(event => {
-                const eventCard = document
+                const eventCard = document.createElement("div");
+                eventCard.classList.add("event-card");
+
+                eventCard.innerHTML = `
+                    <img src="${event.image}" alt="${event.title}">
+                    <p class="event-title">${event.title}</p>
+                    <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
+                `;
+
+                eventList.appendChild(eventCard);
+            });
+        });
+    </script>
+</body>
+</html>
