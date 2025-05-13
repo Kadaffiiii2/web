@@ -1,61 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Tabel Perkalian 10 x 10</title>
+    <meta charset="UTF-8">
+    <title>Tabel Perkalian 10x10</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            padding: 30px;
-            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         table {
             border-collapse: collapse;
-            margin: 0 auto;
-        }
-        th, td {
-            border: 1px solid #000;
-            padding: 8px 12px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
+            margin: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         caption {
-            font-size: 24px;
+            font-size: 1.5em;
+            margin-bottom: 15px;
             font-weight: bold;
-            margin-bottom: 10px;
+        }
+        th, td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+        }
+        th {
+            background-color: #343a40;
+            color: white;
+        }
+        td {
+            background-color: #ffffff;
+            transition: background 0.3s ease;
+        }
+        td:hover {
+            background-color: #e9ecef;
+            font-weight: bold;
+        }
+        tr:nth-child(even) td {
+            background-color: #f1f3f5;
         }
     </style>
 </head>
 <body>
 
-<table>
-    <caption>Tabel Perkalian 10 x 10</caption>
-    <thead>
-        <tr>
-            <th>x</th>
+    <table>
+        <caption>Tabel Perkalian 10x10</caption>
+        <thead>
+            <tr>
+                <th>&times;</th>
+                <?php for ($i = 1; $i <= 10; $i++) { echo "<th>$i</th>"; } ?>
+            </tr>
+        </thead>
+        <tbody>
             <?php
-                // Header kolom (1 sampai 10)
-                for ($i = 1; $i <= 10; $i++) {
-                    echo "<th>$i</th>";
-                }
-            ?>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-            // Isi baris tabel
             for ($i = 1; $i <= 10; $i++) {
                 echo "<tr>";
-                echo "<th>$i</th>"; // Header baris
+                echo "<th>$i</th>";
                 for ($j = 1; $j <= 10; $j++) {
-                    echo "<td>" . ($i * $j) . "</td>";
+                    $hasil = $i * $j;
+                    echo "<td>$hasil</td>";
                 }
                 echo "</tr>";
             }
-        ?>
-    </tbody>
-</table>
+            ?>
+        </tbody>
+    </table>
 
 </body>
 </html>
