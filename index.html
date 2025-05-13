@@ -237,7 +237,7 @@
 
         /* Hamburger Menu Styles */
         .hamburger-menu {
-            display: block; /* Selalu tampilkan menu hamburger */
+            display: none;
             cursor: pointer;
             position: absolute;
             top: 20px;
@@ -245,17 +245,14 @@
             z-index: 1001;
         }
 
-        /* Hamburger Menu Icon Enhancement */
         .hamburger-menu .bar {
             width: 30px;
             height: 3px;
             background-color: white;
             margin: 6px 0;
             transition: 0.4s;
-            display: block; /* Pastikan bar terlihat */
         }
 
-        /* Mobile Navigation */
         .mobile-nav {
             display: none;
             position: fixed;
@@ -267,7 +264,6 @@
             z-index: 1000;
             overflow-y: auto;
             padding-top: 70px;
-            opacity: 0.98; /* Sedikit transparansi */
         }
 
         .mobile-nav ul {
@@ -320,18 +316,16 @@
 
         /* Media Query for Responsive Design */
         @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
             header nav {
                 display: none;
             }
 
             .container {
                 width: 95%;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .hamburger-menu {
-                display: none; /* Sembunyikan pada layar besar */
             }
         }
 
@@ -481,15 +475,6 @@ Selamat menjelajah, temukan inspirasi baru setiap harinya, dan jadilah bagian da
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Pastikan hamburger menu berfungsi dengan benar
-            const hamburger = document.querySelector('.hamburger-menu');
-            const mobileNav = document.getElementById('mobileNav');
-            
-            // Inisialisasi hamburger
-            hamburger.addEventListener('click', function() {
-                toggleMenu();
-            });
-
             const books = [
                 {
                     title: "The Subtle Art of Not Giving a F*ck",
@@ -607,9 +592,6 @@ Selamat menjelajah, temukan inspirasi baru setiap harinya, dan jadilah bagian da
                 mobileNav.style.display = 'block';
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
             }
-            
-            // Log untuk debugging
-            console.log("Menu toggled. Display: " + mobileNav.style.display);
         }
 
         // Toggle Dropdown in Mobile Menu
