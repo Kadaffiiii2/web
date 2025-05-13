@@ -33,6 +33,7 @@
             text-align: center;
             padding: 10px;
             border-radius: 8px 8px 0 0;
+            position: relative;
         }
 
         header img {
@@ -233,6 +234,113 @@
         footer a img {
             vertical-align: middle;
         }
+
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .hamburger-menu .bar {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #4B3619;
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 70px;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile-nav ul li {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        .mobile-nav .dropdown-content {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0;
+        }
+
+        .mobile-nav .dropdown-content li {
+            border-bottom: none;
+            padding: 10px;
+        }
+
+        .mobile-nav .dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-nav .dropdown-toggle::after {
+            content: '+';
+            font-size: 20px;
+        }
+
+        .mobile-nav .dropdown-active .dropdown-toggle::after {
+            content: '-';
+        }
+
+        .mobile-nav .dropdown-active .dropdown-content {
+            display: block;
+        }
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            header nav {
+                display: none;
+            }
+
+            .container {
+                width: 95%;
+            }
+        }
+
+        /* Animation for Hamburger Menu */
+        .change .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .change .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
     </style>
 </head>
 <body>
@@ -240,38 +348,87 @@
         <header>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
             <h1>Perpustakaan Kadaffi</h1>
-         <nav>
-    <ul>
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="about.html">About</a></li>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            
+            <!-- Regular Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="about.html">About</a></li>
 
-        <li><a href="Media.html">Media</a>
+                    <li><a href="Media.html">Media</a>
+                        <ul>
+                            <li><a href="audio.html">Audio</a></li>
+                            <li><a href="video.html">Video</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="Tautan.html">Kerjasama</a>
+                        <ul>
+                            <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
+                            <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Formulir</a>
+                        <ul>
+                            <li><a href="formanggota.html">Formulir Anggota</a></li>
+                            <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="LatihanPHP.html">PHP</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
             <ul>
-                <li><a href="audio.html">Audio</a></li>
-                <li><a href="video.html">Video</a></li>
-            </ul>
-        </li>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="about.html">About</a></li>
 
-        <li><a href="Tautan.html">Kerjasama</a>
-            <ul>
-                <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
-                <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
-            </ul>
-        </li>
+                <li class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        <a href="Media.html">Media</a>
+                    </div>
+                    <ul class="dropdown-content">
+                        <li><a href="audio.html">Audio</a></li>
+                        <li><a href="video.html">Video</a></li>
+                    </ul>
+                </li>
 
-        <li><a href="#">Formulir</a>
-            <ul>
-                <li><a href="formanggota.html">Formulir Anggota</a></li>
-                <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
-            </ul>
-        </li>
+                <li class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        <a href="Tautan.html">Kerjasama</a>
+                    </div>
+                    <ul class="dropdown-content">
+                        <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
+                        <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
+                    </ul>
+                </li>
 
-        <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-        <li><a href="LatihanPHP.html">PHP</a></li>
-    </ul>
-</nav>
-</header>
+                <li class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                        <a href="#">Formulir</a>
+                    </div>
+                    <ul class="dropdown-content">
+                        <li><a href="formanggota.html">Formulir Anggota</a></li>
+                        <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="LatihanPHP.html">PHP</a></li>
+            </ul>
+        </div>
 
         <main>
             <h2>Selamat Datang di Perpustakaan Kadaffi</h2>
@@ -420,6 +577,28 @@ Selamat menjelajah, temukan inspirasi baru setiap harinya, dan jadilah bagian da
                 eventList.appendChild(eventCard);
             });
         });
+
+        // Hamburger Menu Functions
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileNav = document.getElementById('mobileNav');
+            
+            hamburger.classList.toggle('change');
+            
+            if (mobileNav.style.display === 'block') {
+                mobileNav.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Enable scrolling again
+            } else {
+                mobileNav.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        // Toggle Dropdown in Mobile Menu
+        function toggleDropdown(element) {
+            const parent = element.parentElement;
+            parent.classList.toggle('dropdown-active');
+        }
     </script>
 </body>
 </html>
