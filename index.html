@@ -341,6 +341,68 @@
         .change .bar:nth-child(3) {
             transform: rotate(45deg) translate(-8px, -8px);
         }
+
+        /* New Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .slider-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            background-color: #4B3619;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: rgba(75, 54, 25, 0.7);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .slider-arrow.left {
+            left: 10px;
+        }
+
+        .slider-arrow.right {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .slider-arrow {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -450,6 +512,12 @@ Selamat menjelajah, temukan inspirasi baru setiap harinya, dan jadilah bagian da
 
             <section class="event-section">
                 <h2>Event Perpustakaan</h2>
+                <div class="slider-container">
+                    <div class="slider-wrapper" id="slider-wrapper"></div>
+                    <div class="slider-arrow left" onclick="prevSlide()">&#10094;</div>
+                    <div class="slider-arrow right" onclick="nextSlide()">&#10095;</div>
+                    <div class="slider-nav" id="slider-nav"></div>
+                </div>
                 <div class="event-container" id="event-list"></div>
             </section>
         </main>
@@ -548,6 +616,14 @@ Selamat menjelajah, temukan inspirasi baru setiap harinya, dan jadilah bagian da
 
             const bookList = document.getElementById("book-list");
             const eventList = document.getElementById("event-list");
+            const sliderWrapper = document.getElementById("slider-wrapper");
+            const sliderNav = document.getElementById("slider-nav");
+
+            // Slider variables
+            let currentSlide = 0;
+            let slideInterval;
+            const slidesToShow = 3; // Number of slides to show at once
+            const slideWidth = 240; // Width of each slide (220px card + 20px gap)
 
             books.forEach(book => {
                 const bookCard = document.createElement("div");
@@ -564,6 +640,29 @@ Selamat menjelajah, temukan inspirasi baru setiap harinya, dan jadilah bagian da
                 bookList.appendChild(bookCard);
             });
 
+            // Create slider items
+            events.forEach((event, index) => {
+                const eventCard = document.createElement("div");
+                eventCard.classList.add("event-card");
+                eventCard.style.minWidth = `${slideWidth}px`;
+
+                eventCard.innerHTML = `
+                    <img src="${event.image}" alt="${event.title}">
+                    <p class="event-title">${event.title}</p>
+                    <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
+                `;
+
+                sliderWrapper.appendChild(eventCard);
+
+                // Create dots for navigation
+                const dot = document.createElement("span");
+                dot.classList.add("slider-dot");
+                if (index === 0) dot.classList.add("active");
+                dot.addEventListener("click", () => goToSlide(index));
+                sliderNav.appendChild(dot);
+            });
+
+            // Also create regular event list (hidden on desktop)
             events.forEach(event => {
                 const eventCard = document.createElement("div");
                 eventCard.classList.add("event-card");
@@ -576,6 +675,73 @@ Selamat menjelajah, temukan inspirasi baru setiap harinya, dan jadilah bagian da
 
                 eventList.appendChild(eventCard);
             });
+
+            // Initialize slider
+            function initSlider() {
+                updateSlider();
+                startAutoSlide();
+                
+                // Pause auto slide on hover
+                sliderWrapper.addEventListener("mouseenter", pauseAutoSlide);
+                sliderWrapper.addEventListener("mouseleave", startAutoSlide);
+            }
+
+            function updateSlider() {
+                const maxSlides = Math.max(0, events.length - slidesToShow);
+                currentSlide = Math.min(Math.max(0, currentSlide), maxSlides);
+                
+                const translateX = -currentSlide * slideWidth;
+                sliderWrapper.style.transform = `translateX(${translateX}px)`;
+                
+                // Update dots
+                const dots = document.querySelectorAll(".slider-dot");
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle("active", index === currentSlide);
+                });
+            }
+
+            function nextSlide() {
+                const maxSlides = Math.max(0, events.length - slidesToShow);
+                currentSlide = (currentSlide < maxSlides) ? currentSlide + 1 : 0;
+                updateSlider();
+            }
+
+            function prevSlide() {
+                const maxSlides = Math.max(0, events.length - slidesToShow);
+                currentSlide = (currentSlide > 0) ? currentSlide - 1 : maxSlides;
+                updateSlider();
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                updateSlider();
+            }
+
+            function startAutoSlide() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 3000); // Change slide every 1 seconds
+            }
+
+            function pauseAutoSlide() {
+                clearInterval(slideInterval);
+            }
+
+            // Initialize slider
+            initSlider();
+
+            // Hide regular event list on desktop, show on mobile
+            function handleResize() {
+                if (window.innerWidth > 768) {
+                    eventList.style.display = "none";
+                    sliderWrapper.parentElement.style.display = "block";
+                } else {
+                    eventList.style.display = "flex";
+                    sliderWrapper.parentElement.style.display = "none";
+                }
+            }
+
+            window.addEventListener("resize", handleResize);
+            handleResize(); // Initial check
         });
 
         // Hamburger Menu Functions
