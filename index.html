@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -94,7 +93,7 @@
             padding: 20px;
         }
 
-        .book-section {
+        .book-section, .event-section {
             margin-top: 20px;
             padding: 20px;
             background: white;
@@ -102,19 +101,19 @@
             box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
         }
 
-        .book-section h2 {
+        .book-section h2, .event-section h2 {
             text-align: center;
             color: #4B3619;
         }
 
-        .book-container {
+        .book-container, .event-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
 
-        .book-card {
+        .book-card, .event-card {
             background: #fdfdfd;
             padding: 15px;
             border-radius: 8px;
@@ -123,9 +122,8 @@
             width: 220px;
         }
 
-        .book-card img {
+        .book-card img, .event-card img {
             width: 100%;
-            height: 300px;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -140,13 +138,13 @@
             color: #555;
         }
 
-        .book-description {
+        .book-description, .event-title {
             font-size: 12px;
             margin: 5px 0 10px;
             color: #777;
         }
 
-        .download-btn {
+        .download-btn, .event-link {
             display: block;
             padding: 8px;
             background: #4B3619;
@@ -157,64 +155,7 @@
             margin-top: 5px;
         }
 
-        .download-btn:hover {
-            background: #362511;
-        }
-
-        .event-section {
-            margin-top: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
-        }
-
-        .event-section h2 {
-            text-align: center;
-            color: #4B3619;
-        }
-
-        .event-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .event-card {
-            background: #fdfdfd;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 220px;
-        }
-
-        .event-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .event-title {
-            margin: 10px 0;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .event-link {
-            display: block;
-            padding: 8px;
-            background: #4B3619;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-
-        .event-link:hover {
+        .download-btn:hover, .event-link:hover {
             background: #362511;
         }
 
@@ -241,38 +182,33 @@
         <header>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
             <h1>Perpustakaan Kadaffi</h1>
-         <nav>
-    <ul>
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="about.html">About</a></li>
-
-        <li><a href="Media.html">Media</a>
-            <ul>
-                <li><a href="audio.html">Audio</a></li>
-                <li><a href="video.html">Video</a></li>
-            </ul>
-        </li>
-
-        <li><a href="Tautan.html">Kerjasama</a>
-            <ul>
-                <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
-                <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#">Formulir</a>
-            <ul>
-                <li><a href="formanggota.html">Formulir Anggota</a></li>
-                <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
-            </ul>
-        </li>
-
-        <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-        <li><a href="LatihanPHP.html">PHP</a></li>
-    </ul>
-</nav>
-</header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Media.html">Media</a>
+                        <ul>
+                            <li><a href="audio.html">Audio</a></li>
+                            <li><a href="video.html">Video</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Tautan.html">Kerjasama</a>
+                        <ul>
+                            <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
+                            <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Formulir</a>
+                        <ul>
+                            <li><a href="formanggota.html">Formulir Anggota</a></li>
+                            <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="LatihanPHP.html">PHP</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <main>
             <h2>Hallo! Selamat Datang di Perpustakaan Kadaffi</h2>
@@ -393,7 +329,7 @@
                     <h3 class="book-title">${book.title}</h3>
                     <p class="book-author">by ${book.author}</p>
                     <p class="book-description">${book.description}</p>
-                    <a href="${book.file}" target="_blank" class="download-btn">Baca Disini</a>
+                    <a href="${book.file}" class="download-btn" target="_blank">Download</a>
                 `;
 
                 bookList.appendChild(bookCard);
@@ -405,8 +341,8 @@
 
                 eventCard.innerHTML = `
                     <img src="${event.image}" alt="${event.title}">
-                    <p class="event-title">${event.title}</p>
-                    <a href="${event.link}" target="_blank" class="event-link">Kunjungi Instagram</a>
+                    <h3 class="event-title">${event.title}</h3>
+                    <a href="${event.link}" class="event-link" target="_blank">Link to Event</a>
                 `;
 
                 eventList.appendChild(eventCard);
