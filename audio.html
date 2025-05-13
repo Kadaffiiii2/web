@@ -1,218 +1,175 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Kadaffi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Musik Teman Belajar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F5F5DC;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- Import Font Poppins dari Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Styling umum */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #F5F5DC;
-            margin: 0;
-            padding: 0;
-        }
+    header {
+      background-color: #362511;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
 
-        .container {
-            width: 80%;
-            max-width: 1000px;
-            background-color: #E2CEB1;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            border-radius: 8px;
-        }
+    header img {
+      height: 50px;
+    }
 
-        h1, h2 {
-            text-align: center;
-            color: #E2CEB1;
-            font-weight: 600;
-        }
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+    }
 
-        .description {
-            text-align: justify;
-            color: #333;
-            font-weight: 300;
-        }
+    header nav ul li {
+      display: inline-block;
+      margin: 0 10px;
+      position: relative;
+    }
 
-        /* Styling tabel */
-        #biodata-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+    }
 
-        #biodata-table th {
-            background-color: #8B5A2B; /* Warna coklat gelap */
-            color: white;
-            padding: 10px;
-            text-align: left;
-            font-weight: 600;
-        }
+    header nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: #4B3619;
+      padding: 10px;
+      list-style: none;
+      top: 100%;
+      left: 0;
+      z-index: 1;
+    }
 
-        #biodata-table td {
-            background-color: #D2B48C; /* Warna coklat terang */
-            padding: 10px;
-            color: black;
-            border: 1px solid #8B5A2B;
-            font-weight: 400;
-        }
+    header nav ul li:hover ul {
+      display: block;
+    }
 
-        /* Styling header */
-        header {
-            background-color: #362511;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
-        }
+    header nav ul li ul li {
+      display: block;
+      margin: 5px 0;
+    }
 
-        header img {
-            height: 50px;
-        }
+    .container {
+      width: 80%;
+      max-width: 1000px;
+      background-color: #E2CEB1;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      border-radius: 8px;
+    }
 
-        header nav ul {
-            list-style: none;
-            padding: 0;
-        }
+    h1 {
+      color: #1DB954;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 600;
+    }
 
-        header nav ul li {
-            display: inline-block;
-            margin: 0 10px;
-            position: relative;
-        }
+    .music-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 400;
-        }
+    iframe {
+      border-radius: 12px;
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
 
-        header nav ul li ul {
-            display: none;
-            position: absolute;
-            background-color: #4B3619;
-            padding: 10px;
-            list-style: none;
-            top: 100%;
-            left: 0;
-            z-index: 1;
-        }
+    footer {
+      background-color: #4B3619;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 400;
+    }
 
-        header nav ul li:hover ul {
-            display: block;
-        }
-
-        header nav ul li ul li {
-            display: block;
-            margin: 5px 0;
-        }
-
-        /* Styling footer */
-        footer {
-            background-color: #4B3619;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
-            margin-top: 20px;
-            font-weight: 400;
-        }
-    </style>
+    footer img {
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
-            <h1 style="color: white;">Perpustakaan Kadaffi</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Homepage</a></li>
-                    <li><a href="about.html">About</a></li>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+    <h1>Perpustakaan Kadaffi</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Media.html">Media</a>
+          <ul>
+            <li><a href="audio.html">Audio</a></li>
+            <li><a href="video.html">Video</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Kerjasama</a>
+          <ul>
+            <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
+            <li><a href="Perpusitb.html">Perpustakaan ITB</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Formulir</a>
+          <ul>
+            <li><a href="formanggota.html">Formulir Anggota</a></li>
+            <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="LatihanPHP.html">PHP</a></li>
+      </ul>
+    </nav>
+  </header>
 
-                    <li><a href="Media.html">Media</a>
-                        <ul>
-                            <li><a href="audio.html">Audio</a></li>
-                            <li><a href="video.html">Video</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="Tautan.html">Kerjasama</a>
-                        <ul>
-                            <li><a href="Perpusnas.html">Perpustakaan Nasional RI</a></li>
-                            <li><a href="Perpusitb.html">Perpustakaan Institut Teknologi Bandung</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#">Formulir</a>
-                        <ul>
-                            <li><a href="formanggota.html">Formulir Anggota</a></li>
-                            <li><a href="formperpus.html">Formulir Perpustakaan</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="LatihanPHP.html">PHP</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <h1>Tentang Kami</h1>
-        <p class="description">
-            Perpustakaan Kadaffi adalah perpustakaan pribadi yang berkomitmen untuk menyediakan akses luas terhadap berbagai e-book, referensi digital, dan layanan perpustakaan yang inovatif.
-        </p>
-        <p class="description">
-            Mari bergabung bersama kami dalam perjalanan menuju dunia penuh ilmu dan pengetahuan!
-        </p>
-
-        <h2>Informasi Pribadi</h2>
-        <table id="biodata-table">
-            <tr>
-                <th>Nama</th>
-                <td id="nama">Kadaffi</td>
-            </tr>
-            <tr>
-                <th>NIM</th>
-                <td id="nim">220709024</td>
-            </tr>
-            <tr>
-                <th>Jurusan</th>
-                <td id="jurusan">Perpustakaan dan Sains Informasi</td>
-            </tr>
-            <tr>
-                <th>Fakultas</th>
-                <td id="fakultas">Ilmu Budaya</td>
-            </tr>
-            <tr>
-                <th>Perguruan Tinggi</th>
-                <td id="kampus">Universitas Sumatera Utara</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td id="email">kadaffi@students.usu.ac.id</td>
-            </tr>
-        </table>
+  <div class="container">
+    <h1>🎵 Musik Teman Belajar</h1>
+    <div class="music-list">
+      <iframe src="https://open.spotify.com/embed/track/7F6PtLP6fJPVtA1FWVkl8K" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/2p9Ac0KQAUfOIXXWAxlzmM" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/2nMeu6UenVvwUktBCpLMK9" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/0QZLSImbxep9NyhhlCGOWh" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/0urpBLpcm6DOGzs86rcKd8" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/3CBxVM0zGj41BQtE6m7gwb" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/41lSgOOaN9QhQz6cADtiwZ" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/7qH9Z4dJEN0l9bidizW7fq" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/0V5cvmTKsYmF5FmGGEAfmS" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/track/33riuTg9aVoiRhHTqm2Qq8" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
+  </div>
 
-    <footer>
-        <div>
-            <p>&copy; 2025 Perpustakaan Kadaffi. All Right Reserved.</p>
-            <p>Jl. Universitas No. 1, Medan, Sumatera Utara | Email: kadaffi@students.usu.ac.id</p>
-            <div style="margin-top: 10px;">
-                <a href="https://www.instagram.com/kadaffi_pili?igsh=MW43YXg4eW03OWhpeg==" target="_blank" style="margin: 0 10px;">
-                    <img src="https://cdn-icons-png.flaticon.com/24/1384/1384063.png" alt="Instagram" title="Instagram">
-                </a>
-                <a href="https://www.youtube.com/@Kadaffi09" target="_blank" style="margin: 0 10px;">
-                    <img src="https://cdn-icons-png.flaticon.com/24/1384/1384060.png" alt="YouTube" title="YouTube">
-                </a>
-                <a href="https://www.linkedin.com/in/kadaffi-d-12187a364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px;">
-                    <img src="https://cdn-icons-png.flaticon.com/24/1384/1384014.png" alt="LinkedIn" title="LinkedIn">
-                </a>
-            </div>
-        </div>
-    </footer>
+  <footer>
+    <div>
+      <p>&copy; 2025 Perpustakaan Kadaffi. All Right Reserved.</p>
+      <p>Jl. Universitas No. 1, Medan, Sumatera Utara | Email: kadaffi@students.usu.ac.id</p>
+      <div style="margin-top: 10px;">
+        <a href="https://www.instagram.com/kadaffi_pili?igsh=MW43YXg4eW03OWhpeg==" target="_blank" style="margin: 0 10px;">
+          <img src="https://cdn-icons-png.flaticon.com/24/1384/1384063.png" alt="Instagram" title="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@Kadaffi09" target="_blank" style="margin: 0 10px;">
+          <img src="https://cdn-icons-png.flaticon.com/24/1384/1384060.png" alt="YouTube" title="YouTube">
+        </a>
+        <a href="https://www.linkedin.com/in/kadaffi-d-12187a364?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin: 0 10px;">
+          <img src="https://cdn-icons-png.flaticon.com/24/1384/1384014.png" alt="LinkedIn" title="LinkedIn">
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
