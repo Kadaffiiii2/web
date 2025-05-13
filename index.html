@@ -356,93 +356,9 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const books = [
-                {
-                    title: "The Subtle Art of Not Giving a F*ck",
-                    author: "Mark Manson",
-                    description: "Pendekatan hidup dengan menerima keterbatasan dan ketidaksempurnaan.",
-                    cover: "https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg",
-                    file: "https://drive.google.com/file/d/1MmDJxq5Ai79g2K8Hg-YwuVOvKP4qb8mT/view?usp=drivesdk"
-                },
-                {
-                    title: "Rich Dad Poor Dad",
-                    author: "Robert Kiyosaki",
-                    description: "Pelajaran keuangan dari dua figur ayah yang berbeda.",
-                    cover: "https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg",
-                    file: "https://drive.google.com/file/d/1MkWfM-S075XMs_tHclD340QiJN_210NL/view?usp=sharing"
-                },
-                {
-                    title: "Think and Grow Rich",
-                    author: "Napoleon Hill",
-                    description: "Formula sukses berdasarkan pola pikir dan kebiasaan.",
-                    cover: "https://m.media-amazon.com/images/I/71UypkUjStL.jpg",
-                    file: "https://drive.google.com/file/d/1MkdhNi-LzfK5pBekQ4PxRQFwYD8k7Bc1/view?usp=sharing"
-                },
-                {   
-                    title: "Atomic Habits", 
-                    author: "James Clear", 
-                    description: "Membangun kebiasaan baik dari hal-hal kecil.", 
-                    cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
-                    file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
-                },
-                { 
-                    title: "Sapiens", 
-                    author: "Yuval Noah Harari", 
-                    description: "Sejarah singkat manusia dari awal peradaban.", 
-                    cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
-                    file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
-                }
-            ];
-
-            const events = [
-                {
-                    title: "Lomba Karya Tulis Ilmiah & Poster",
-                    image: "https://i.imgur.com/7pDtl9S.jpeg",
-                    link: "https://www.instagram.com/p/DH5v_rsTEV6/?igsh=ajJtdzdwYWQydzUx"
-                },
-                {
-                    title: "Seminar Nasional Teknologi 2025",
-                    image: "https://i.imgur.com/aZl4yyl.jpeg",
-                    link: "https://www.instagram.com/p/Cd9jxwstHge/?igsh=bmpdXZb4jwZGFLQ4"
-                }
-            ];
-
-            function renderBooks() {
-                const bookList = document.getElementById('book-list');
-                books.forEach(book => {
-                    const card = document.createElement('div');
-                    card.classList.add('book-card');
-                    card.innerHTML = `
-                        <img src="${book.cover}" alt="${book.title}">
-                        <div class="book-title">${book.title}</div>
-                        <div class="book-author">${book.author}</div>
-                        <div class="book-description">${book.description}</div>
-                        <a href="${book.file}" class="download-btn" target="_blank">Download</a>
-                    `;
-                    bookList.appendChild(card);
-                });
-            }
-
-            function renderEvents() {
-                const eventList = document.getElementById('event-list');
-                events.forEach(event => {
-                    const card = document.createElement('div');
-                    card.classList.add('event-card');
-                    card.innerHTML = `
-                        <img src="${event.image}" alt="${event.title}">
-                        <div class="event-title">${event.title}</div>
-                        <a href="${event.link}" class="event-link" target="_blank">Daftar Sekarang</a>
-                    `;
-                    eventList.appendChild(card);
-                });
-            }
-
-            renderBooks();
-            renderEvents();
-
-            // Hamburger menu toggle
             const hamburger = document.getElementById('hamburger');
             const nav = document.querySelector('nav');
+
             hamburger.addEventListener('click', () => {
                 nav.classList.toggle('active');
             });
