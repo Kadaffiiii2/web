@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tabel Perkalian 10x10</title>
+    <title>Tabel Perkalian 10 x 10</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 50%;
-            margin: 20px auto;
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
             text-align: center;
         }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
         th, td {
-            border: 1px solid #333;
-            padding: 8px;
+            border: 1px solid #000;
+            padding: 8px 12px;
+            text-align: center;
         }
         th {
             background-color: #f2f2f2;
         }
         caption {
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 24px;
             font-weight: bold;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -31,7 +35,7 @@
         <tr>
             <th>x</th>
             <?php
-                // Baris kepala (1 sampai 10)
+                // Header kolom (1 sampai 10)
                 for ($i = 1; $i <= 10; $i++) {
                     echo "<th>$i</th>";
                 }
@@ -40,10 +44,10 @@
     </thead>
     <tbody>
         <?php
-            // Isi tabel
+            // Isi baris tabel
             for ($i = 1; $i <= 10; $i++) {
                 echo "<tr>";
-                echo "<th>$i</th>"; // Kolom pertama (angka baris)
+                echo "<th>$i</th>"; // Header baris
                 for ($j = 1; $j <= 10; $j++) {
                     echo "<td>" . ($i * $j) . "</td>";
                 }
