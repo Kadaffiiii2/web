@@ -87,3 +87,55 @@ nav ul li ul li a:hover {
     background-color: #c39d7a;
     border-radius: 0;
 }
+
+/* Slider untuk Event */
+.slider-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.event-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.event-card {
+    background: #fdfdfd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 220px;
+    margin: 0 10px;
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.event-title {
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.event-link {
+    display: block;
+    padding: 8px;
+    background: #4B3619;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.event-link:hover {
+    background: #362511;
+}
