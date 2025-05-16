@@ -745,21 +745,6 @@ Selamat menjelajah, temukan inspirasi baru setiap harinya, dan jadilah bagian da
             handleResize(); // Initial check
         });
 
-        // Hamburger Menu Functions
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger-menu');
-            const mobileNav = document.getElementById('mobileNav');
-            
-            hamburger.classList.toggle('change');
-            
-            if (mobileNav.style.display === 'block') {
-                mobileNav.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Enable scrolling again
-            } else {
-                mobileNav.style.display = 'block';
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            }
-        }
 
         // Toggle Dropdown in Mobile Menu
         function toggleDropdown(element) {
